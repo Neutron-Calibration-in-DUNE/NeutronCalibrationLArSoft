@@ -21,7 +21,7 @@ cd dunetpc/dune/
 
 git clone https://github.com/infophysics/NeutronExtractor
 
-sed '$ a add_subdirectory(NeutronExtractor)' CMakeLists.txt
+sed -i '$ a add_subdirectory(NeutronExtractor)' CMakeLists.txt
 
 cd $MRB_BUILDDIR
 mrbsetenv
