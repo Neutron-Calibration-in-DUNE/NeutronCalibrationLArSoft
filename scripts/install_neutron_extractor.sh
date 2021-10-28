@@ -19,9 +19,9 @@ cd $MRB_SOURCE
 mrb g -t $DUNETPC_VERSION dunetpc
 cd dunetpc/dune/
 
-git clone https://github.com/infophysics/MCParticleExtractor
+git clone https://github.com/infophysics/NeutronExtractor
 
-sed '$ a add_subdirectory(MCParticleExtractor)' CMakeLists.txt
+sed '$ a add_subdirectory(NeutronExtractor)' CMakeLists.txt
 
 cd $MRB_BUILDDIR
 mrbsetenv
