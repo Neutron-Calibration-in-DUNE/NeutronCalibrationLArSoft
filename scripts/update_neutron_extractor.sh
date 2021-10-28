@@ -11,3 +11,7 @@ cd $INSTALL_DIRECTORY
 source localProducts*/setup
 mrbslp
 
+cd $MRB_SOURCE/dunetpc/dune/NeutronExtractor
+git pull
+
+ninja -C $MRB_BUILDDIR -j 32 install
