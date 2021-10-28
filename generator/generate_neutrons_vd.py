@@ -12,15 +12,11 @@ import PNS_generator
 # center of the active volume
 x_center = 0
 y_center = 0
-z_center = 700
+z_center = 443
 # center on top of the cryostat
 x_cryo   = 0
-y_cryo   = 700
-z_cryo   = 700
-# forward right corner
-x_corner = 175
-y_corner = 700
-z_corner = 140
+y_cryo   = 607
+z_cryo   = 443
 
 
 if __name__ == "__main__":
@@ -33,7 +29,7 @@ if __name__ == "__main__":
     y_pos = y_center
     z_pos = z_center     
     # number of events to generate
-    num_events = 500
+    num_events = 10
     # number of neutrons to generate per event
     num_neutrons = 1450
     # output file name
