@@ -1,4 +1,5 @@
 #! /bin/bash
+CURRENT_DIR=$PWD
 INSTALL_DIRECTORY=/dune/app/users/$USER/NeutronCalibrationLArSoft
 LARSOFT_VERSION=v09_31_00
 DUNETPC_VERSION=$LARSOFT_VERSION
@@ -15,3 +16,5 @@ cd $MRB_SOURCE/dunetpc/dune/NeutronExtractor
 git pull
 
 ninja -C $MRB_BUILDDIR -j 32 install
+
+cd $CURRENT_DIR

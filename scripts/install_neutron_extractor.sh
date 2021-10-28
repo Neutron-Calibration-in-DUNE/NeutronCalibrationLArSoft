@@ -1,4 +1,5 @@
 #! /bin/bash
+CURRENT_DIR=$PWD
 INSTALL_DIRECTORY=/dune/app/users/$USER/NeutronCalibrationLArSoft
 LARSOFT_VERSION=v09_31_00
 DUNETPC_VERSION=$LARSOFT_VERSION
@@ -26,3 +27,5 @@ sed -i '$ a add_subdirectory(NeutronExtractor)' CMakeLists.txt
 cd $MRB_BUILDDIR
 mrbsetenv
 mrb install -j 32 --generator ninja
+
+cd $CURRENT_DIR
