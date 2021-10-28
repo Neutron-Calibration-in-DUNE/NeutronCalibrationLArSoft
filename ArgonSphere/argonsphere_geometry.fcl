@@ -1,0 +1,13 @@
+BEGIN_PROLOG
+
+argonsphere_geo:
+{
+    Name:   "ArgonSphere"
+    GDML:   "ArgonSphere.gdml"
+    ROOT:   "ArgonSphere.gdml"
+    SortingParameters:  {ChannelsPerOpDet: 1}
+    SurfaceY:           {100000000}
+    DisableWiresInG4:   true
+}
+
+END_PROLOG
