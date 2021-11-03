@@ -1,5 +1,5 @@
 #! /bin/bash
-INSTALL_DIRECTORY=/dune/app/users/$USER/NeutronCalibrationLArSoft
+INSTALL_DIRECTORY=/dune/app/users/$USER/NeutronCalibrationInstall
 LARSOFT_VERSION=v09_31_00
 DUNETPC_VERSION=$LARSOFT_VERSION
 ARTG4TK_VERSION=v10_03_00
