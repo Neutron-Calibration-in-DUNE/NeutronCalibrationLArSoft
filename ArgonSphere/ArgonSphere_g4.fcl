@@ -55,5 +55,5 @@ services.LArG4Parameters.VisualizationEnergyCut:    1e-9 # GeV
 
 source.fileNames:       ["outputs/ArgonSphere_10000_1_generator_output.root"]
 source.maxEvents:       10
-outputs.out1.fileName:  "g4_output/center_3view/FDVD_1x6x6_center_3view_500_1_1.root"
+outputs.out1.fileName:  "outputs/ArgonSphere_10000_1_g4_output.root"
 physics.simulate:       [rns, largeant, IonAndScint, elecDrift]
