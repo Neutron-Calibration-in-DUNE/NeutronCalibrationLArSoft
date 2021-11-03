@@ -1,4 +1,13 @@
 #! /bin/bash
+# get the directory where this script is stored
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+NEUTRON_CALIBRATION_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )../"
+
 INSTALL_DIRECTORY=/dune/app/users/$USER/NeutronCalibrationInstall
 LARSOFT_VERSION=v09_31_00
 DUNETPC_VERSION=$LARSOFT_VERSION
@@ -16,4 +25,8 @@ git pull
 
 ninja -C $MRB_BUILDDIR -j 32 install
 
-cd $CURRENT_DIR
+# setup geometry file path
+export FW_SEARCH_PATH="$FW_SEARCH_PATH:$NEUTRON_CALIBRATION_DIR/geometry"
+export FHICL_FILE_PATH="$FHICL_FILE_PATH:$NEUTRON_CALIBRATION_DIR/ArgonSphere"
+
+cd $NEUTRON_CALIBRATION_DIR

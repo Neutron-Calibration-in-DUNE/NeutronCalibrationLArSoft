@@ -6,7 +6,7 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
   SOURCE="$(readlink "$SOURCE")"
   [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 done
-NEUTRON_CALIBRATION_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+NEUTRON_CALIBRATION_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )../"
 
 INSTALL_DIRECTORY=/dune/app/users/$USER/NeutronCalibrationInstall
 LARSOFT_VERSION=v09_31_00
@@ -19,6 +19,10 @@ setup ninja
 cd $INSTALL_DIRECTORY
 source localProducts*/setup
 mrbslp
+
+# setup geometry file path
+export FW_SEARCH_PATH="$FW_SEARCH_PATH:$NEUTRON_CALIBRATION_DIR/geometry"
+export FHICL_FILE_PATH="$FHICL_FILE_PATH:$NEUTRON_CALIBRATION_DIR/ArgonSphere"
 
 cd $NEUTRON_CALIBRATION_DIR
 
