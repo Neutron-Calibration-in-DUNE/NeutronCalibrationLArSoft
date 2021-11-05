@@ -1,0 +1,4 @@
+#include "protodune_generator.fcl"
+
+# change to the input file you want to use
+physics.producers.generator.InputFileName:  "../../dat/ProtoDUNE-I/ProtoDUNE-I_50_1450.dat"  
