@@ -1,4 +1,4 @@
-#include "fdsp_1x2x6_generator.fcl"
+#include "../fdsp_1x2x6_generator.fcl"
 
 physics.producers.generator.InputFileName:  "../../input_files/FDSP/1x2x6/simple_tests/simple_test.dat"
 outputs.out1.fileName:  "outputs/generator_output.root"
