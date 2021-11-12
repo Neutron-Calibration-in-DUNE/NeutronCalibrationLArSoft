@@ -8,7 +8,7 @@ services: {
     {
         PhysicsListName:                    "MyQGSP_BERT_ArHP"
         DumpList:                           true
-        enableNeutronLimit:                 true
+        enableNeutronLimit:                 false
         NeutronTimeLimit:                   0.0
         NeutronKinELimit:                   0.0
         enableStepLimit:                    true
@@ -47,7 +47,7 @@ services.LArG4Parameters.NewProtonCut:      0.0
 # we want to keep all ionization electrons
 services.LArG4Parameters.FillSimEnergyDeposits:     true
 services.LArG4Parameters.KeepEMShowerDaughters:     true
-services.LArG4Parameters.ParticleKineticEnergyCut:  1e-9 # GeV
+#services.LArG4Parameters.ParticleKineticEnergyCut:  1e-9 # GeV
 services.LArG4Parameters.StoreTrajectories:         true
 services.LArG4Parameters.VisualizeNeutrals:         true
-services.LArG4Parameters.VisualizationEnergyCut:    1e-9 # GeV
+#services.LArG4Parameters.VisualizationEnergyCut:    1e-9 # GeV
