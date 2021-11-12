@@ -11,7 +11,9 @@ NEUTRON_CALIBRATION_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pw
 
 mkdir -p NEUTRON_CALIBRATION_DIR/input_files
 
+mkdir -p NEUTRON_CALIBRATION_DIR/FDSP
 FDSP_FOLDER=NEUTRON_CALIBRATION_DIR/FDSP
+mkdir -p FDSP_FOLDER/1x2x6
 1x2x6_FOLDER=NEUTRON_CALIBRATION_DIR/FDSP/1x2x6
 mkdir -p FDSP_FOLDER
 mkdir -p 1x2x6_FOLDER
@@ -21,7 +23,9 @@ mkdir -p 1x2x6_FOLDER/simple_tests
 mkdir -p 1x2x6_FOLDER/simple_tests/hists
 mkdir -p 1x2x6_FOLDER/simple_tests/outputs
 
+mkdir -p NEUTRON_CALIBRATION_DIR/FDVD
 FDVD_FOLDER=NEUTRON_CALIBRATION_DIR/FDVD
+mkdir -p FDVD_FOLDER/1x6x6
 1x6x6_FOLDER=NEUTRON_CALIBRATION_DIR/FDVD/1x6x6
 mkdir -p FDVD_FOLDER
 mkdir -p 1x6x6_FOLDER
@@ -31,7 +35,9 @@ mkdir -p 1x6x6_FOLDER/simple_tests
 mkdir -p 1x6x6_FOLDER/simple_tests/hists
 mkdir -p 1x6x6_FOLDER/simple_tests/outputs
 
+mkdir -p NEUTRON_CALIBRATION_DIR/ProtoDUNE-I
 ProtoDUNE-I_FOLDER=NEUTRON_CALIBRATION_DIR/ProtoDUNE-I
+mkdir -p ProtoDUNE-I_FOLDER/DDG
 DDG_FOLDER=NEUTRON_CALIBRATION_DIR/ProtoDUNE-I/DDG
 mkdir -p ProtoDUNE-I_FOLDER
 mkdir -p DDG_FOLDER
