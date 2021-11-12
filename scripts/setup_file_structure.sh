@@ -9,28 +9,20 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 NEUTRON_CALIBRATION_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/../"
 
-mkdir -p $NEUTRON_CALIBRATION_DIR/input_files
+mkdir -p $NEUTRON_CALIBRATION_DIR/input_files/FDSP/1x2x6/simple_tests/
+mkdir -p $NEUTRON_CALIBRATION_DIR/input_files/FDVD/1x6x6/simple_tests/
 
-mkdir -p $NEUTRON_CALIBRATION_DIR/FDSP
-mkdir -p $NEUTRON_CALIBRATION_DIR/FDSP/1x2x6
 mkdir -p $NEUTRON_CALIBRATION_DIR/FDSP/1x2x6/hists
 mkdir -p $NEUTRON_CALIBRATION_DIR/FDSP/1x2x6/outputs
-mkdir -p $NEUTRON_CALIBRATION_DIR/FDSP/1x2x6/simple_tests
 mkdir -p $NEUTRON_CALIBRATION_DIR/FDSP/1x2x6/simple_tests/hists
 mkdir -p $NEUTRON_CALIBRATION_DIR/FDSP/1x2x6/simple_tests/outputs
 
-mkdir -p $NEUTRON_CALIBRATION_DIR/FDVD
-mkdir -p $NEUTRON_CALIBRATION_DIR/FDVD/1x6x6
 mkdir -p $NEUTRON_CALIBRATION_DIR/FDVD/1x6x6/hists
 mkdir -p $NEUTRON_CALIBRATION_DIR/FDVD/1x6x6/outputs
-mkdir -p $NEUTRON_CALIBRATION_DIR/FDVD/1x6x6/simple_tests
 mkdir -p $NEUTRON_CALIBRATION_DIR/FDVD/1x6x6/simple_tests/hists
 mkdir -p $NEUTRON_CALIBRATION_DIR/FDVD/1x6x6/simple_tests/outputs
 
-mkdir -p $NEUTRON_CALIBRATION_DIR/ProtoDUNE-I
-mkdir -p $NEUTRON_CALIBRATION_DIR/ProtoDUNE-I/DDG
 mkdir -p $NEUTRON_CALIBRATION_DIR/ProtoDUNE-I/DDG/hists
 mkdir -p $NEUTRON_CALIBRATION_DIR/ProtoDUNE-I/DDG/outputs
-mkdir -p $NEUTRON_CALIBRATION_DIR/ProtoDUNE-I/DDG/simple_tests
 mkdir -p $NEUTRON_CALIBRATION_DIR/ProtoDUNE-I/DDG/simple_tests/hists
 mkdir -p $NEUTRON_CALIBRATION_DIR/ProtoDUNE-I/DDG/simple_tests/outputs
