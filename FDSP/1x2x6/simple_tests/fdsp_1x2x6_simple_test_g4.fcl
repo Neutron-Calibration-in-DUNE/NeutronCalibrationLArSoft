@@ -1,4 +1,4 @@
-#include "fdsp_1x2x6_g4.fcl"
+#include "../fdsp_1x2x6_g4.fcl"
 
 source.fileNames:       ["outputs/generator_output.root"]
 source.maxEvents:       500
