@@ -4,7 +4,7 @@
 #include "dune_radiological_model.fcl"
 #include "geometry_dune.fcl"
 
-process_name: FDSP-1x2x6-NeutronGenerator
+process_name: FDSP_1x2x6_NeutronGenerator
 
 services:
 {
