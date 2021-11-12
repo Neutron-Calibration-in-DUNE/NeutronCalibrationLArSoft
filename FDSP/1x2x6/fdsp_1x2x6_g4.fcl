@@ -1,0 +1,53 @@
+#include "standard_g4_dune10kt_refactored.fcl"
+
+services: {
+    @table::services
+    @table::dunefd_simulation_services_refactored 
+    Geometry:      @local::dune10kt_1x2x6_v4_refactored_geo
+    PhysicsList:
+    {
+        PhysicsListName:                    "MyQGSP_BERT_ArHP"
+        DumpList:                           true
+        enableNeutronLimit:                 true
+        NeutronTimeLimit:                   0.0
+        NeutronKinELimit:                   0.0
+        enableStepLimit:                    true
+        enableOptical:                      false
+        enableCerenkov:                     false
+        CerenkovStackPhotons:               false
+        CerenkovMaxNumPhotons:              100
+        CerenkovMaxBetaChange:              10.0
+        enableScintillation:                false
+        ScintillationStackPhotons:          false
+        ScintillationByParticleType:        false
+        ScintillationTrackInfo:             false
+        ScintillationTrackSecondariesFirst: false
+        enableAbsorption:                   false
+        enableRayleigh:                     false
+        enableMieHG:                        false
+        enableBoundary:                     false
+        enableWLS:                          false
+        BoundaryInvokeSD:                   false
+        Verbosity:                          1
+        WLSProfile:                         delta
+    }
+}
+physics.producers.largeant.ChargeRecoveryMargin: 2.5 # cm
+services.LArG4Parameters.UseCustomPhysics:      true
+services.LArG4Parameters.EnabledPhysics: [ "LowEnergyEm",
+                                           "FastOptical",
+                                           "SynchrotronAndGN",
+                                           "Ion",
+                                           "HadronHP",
+                                           "Decay",
+                                           "HadronElastic",
+                                           "Stopping" ]
+services.LArG4Parameters.ModifyProtonCut:   true
+services.LArG4Parameters.NewProtonCut:      0.0
+# we want to keep all ionization electrons
+services.LArG4Parameters.FillSimEnergyDeposits:     true
+services.LArG4Parameters.KeepEMShowerDaughters:     true
+services.LArG4Parameters.ParticleKineticEnergyCut:  1e-9 # GeV
+services.LArG4Parameters.StoreTrajectories:         true
+services.LArG4Parameters.VisualizeNeutrals:         true
+services.LArG4Parameters.VisualizationEnergyCut:    1e-9 # GeV
