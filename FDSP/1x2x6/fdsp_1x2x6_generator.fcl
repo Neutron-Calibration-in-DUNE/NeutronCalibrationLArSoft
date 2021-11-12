@@ -14,7 +14,8 @@ services:
     RandomNumberGenerator:    {} #ART native random number generator
     MemoryTracker:            {}
     FileCatalogMetadata:      @local::art_file_catalog_mc
-    @table::dunefd_simulation_services_refactored 
+    @table::services
+    @table::dunefd_1x2x6_simulation_services_refactored 
     # currently, the full detector volume is not refactored   
     # but for the 1x2x6 geometry it is:
     Geometry:                 @local::dune10kt_1x2x6_v4_refactored_geo
