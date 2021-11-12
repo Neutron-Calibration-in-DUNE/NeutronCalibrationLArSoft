@@ -33,9 +33,9 @@ if __name__ == "__main__":
     y_pos = y_center
     z_pos = z_center     
     # number of events to generate
-    num_events = 50
+    num_events = 500
     # number of neutrons to generate per event
-    num_neutrons = 500
+    num_neutrons = 100
     # output file name
     output_file = "../input_files/FDSP/1x2x6/simple_tests/simple_test.dat"
 
