@@ -1,5 +1,8 @@
 #include "../protodune_generator.fcl"
 
+# use the DDG geometry
+services.Geometry:  @local::protodunev7_ddg_geo
+
 # change to the input file you want to use
 physics.producers.generator.InputFileName:  "../../dat/ProtoDUNE-I/ProtoDUNE-I_50_1450.dat"  
 outputs.out1.fileName:  "outputs/generator_output.root"
