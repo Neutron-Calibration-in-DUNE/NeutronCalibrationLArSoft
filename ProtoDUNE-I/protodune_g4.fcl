@@ -16,7 +16,7 @@ services:
     FileCatalogMetadata:      @local::art_file_catalog_mc
     @table::protodune_larg4_services
     @table::protodune_refactored_simulation_services 
-    Geometry:                 @local::protodune_refactored_geo
+    #Geometry:                 @local::protodune_refactored_geo
     
     PhysicsList:
     {
