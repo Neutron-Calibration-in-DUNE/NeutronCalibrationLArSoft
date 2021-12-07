@@ -4,7 +4,7 @@
 #include "IonAndScint_dune.fcl"
 #include "PDFastSim_dune.fcl"
 
-process_name: ProtoDUNE_I_G4
+process_name: ProtoDUNEIG4
 
 services:
 {

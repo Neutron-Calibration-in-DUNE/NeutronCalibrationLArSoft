@@ -5,7 +5,7 @@
 #include "dune_radiological_model.fcl"
 #include "geometry_dune.fcl"
 
-process_name: ProtoDUNE_I_NeutronGenerator
+process_name: ProtoDUNEINeutronGenerator
 
 services:
 {
