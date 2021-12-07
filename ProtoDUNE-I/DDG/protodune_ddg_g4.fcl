@@ -3,4 +3,4 @@
 source.fileNames:       ["outputs/generator_output.root"]
 source.maxEvents:       50
 outputs.out1.fileName:  "outputs/g4_output.root"
-physics.simulate:       [rns, largeant, IonAndScint, elecDrift]
+physics.simulate:       [rns, largeant, IonAndScint, PDFastSim]
