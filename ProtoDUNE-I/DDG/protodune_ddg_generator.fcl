@@ -1,5 +1,5 @@
 #include "../protodune_generator.fcl"
-#include "protodune_ddg_geometry.fcl"
+##include "protodune_ddg_geometry.fcl"
 
 # use the DDG geometry
 services.Geometry:  @local::protodunev7_ddg_geo
