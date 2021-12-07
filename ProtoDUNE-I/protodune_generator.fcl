@@ -16,7 +16,7 @@ services:
     MemoryTracker:            {}
     FileCatalogMetadata:      @local::art_file_catalog_mc
     @table::protodune_refactored_simulation_services 
-    Geometry:                 @local::protodunev8_refactored_geo
+    Geometry:                 @local::protodune_refactored_geo
 }
 
 #Start each new event with an empty event.
