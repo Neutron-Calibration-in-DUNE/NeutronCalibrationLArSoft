@@ -94,7 +94,7 @@ outputs:
     out1:
     {
         module_type:        RootOutput
-        fileName:           "outputs/protodune-I_generator_output.root"
+        fileName:           "outputs/protodune-I_g4_output.root"
         dataTier:           "generated"
         compressionLevel:   1
         outputCommands:     [ "keep *" ]
