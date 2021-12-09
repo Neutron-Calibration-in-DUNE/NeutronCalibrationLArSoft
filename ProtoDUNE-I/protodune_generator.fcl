@@ -11,9 +11,9 @@ services:
 {
     # Load the service that manages root files for histograms.
     TFileService:             { fileName: "hists/protodune-I_generator_hists.root" }
-    TimeTracker:              {}
+    TimeTracker:              @local::dune_time_tracker
+    MemoryTracker:            @local::dune_memory_tracker
     RandomNumberGenerator:    {} #ART native random number generator
-    MemoryTracker:            {}
     FileCatalogMetadata:      @local::art_file_catalog_mc
     @table::protodune_refactored_simulation_services 
 }
