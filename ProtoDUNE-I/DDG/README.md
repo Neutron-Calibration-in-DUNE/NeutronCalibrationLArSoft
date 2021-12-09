@@ -28,3 +28,21 @@ If the above step is successful, the next step is to run the Geant4 simulation w
 ```bash
 lar -c protodune_ddg_g4.fcl
 ```
+
+### Detector Simulation Step
+----------------------------
+
+The next step is the detector simulation, which includes a few LArSoft modules: *tpcrawdecoder* (wirecell), *opdigi* and *crt*.  To run it, simply change the input and output file names accordingly in *protodune_ddg_detsim.fcl* and run:
+
+```bash
+lar -c protodune_ddg_detsim.fcl
+```
+
+### Reconstruction Step
+-----------------------
+
+Finally, one can run a reconstruction using the *protodune_ddg_reco.fcl* file, which only selects a few of the reco algorithms: *caldata*, *wclsdatasp*, *gaushit*, *nhitsfinder*, *reco3d*.  To run this script, first change the input and output names to their necessary values and run:
+
+```bash
+lar -c protodune_ddg_reco.fcl
+```
