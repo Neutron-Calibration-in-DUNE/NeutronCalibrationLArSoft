@@ -3,4 +3,4 @@
 source.fileNames:       ["outputs/detsim_output.root"]
 source.maxEvents:       5
 outputs.out1.fileName:  "outputs/reco_full_output.root"
-physics.reco:           [wclsmcnfsp, gaushit, spsolve]
+physics.reco:           [rns, wclsmcnfsp, gaushit, spsolve]
