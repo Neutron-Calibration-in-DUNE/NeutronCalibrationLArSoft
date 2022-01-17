@@ -51,3 +51,4 @@ services.LArG4Parameters.KeepEMShowerDaughters:     true
 services.LArG4Parameters.StoreTrajectories:         true
 services.LArG4Parameters.VisualizeNeutrals:         true
 #services.LArG4Parameters.VisualizationEnergyCut:    1e-9 # GeV
+physics.producers.IonAndScint.SavePriorSCE:         true
