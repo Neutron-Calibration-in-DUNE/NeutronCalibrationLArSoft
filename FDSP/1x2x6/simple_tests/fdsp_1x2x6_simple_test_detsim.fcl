@@ -1,0 +1,6 @@
+#include "../fdsp_1x2x6_detsim.fcl"
+
+source.fileNames:       ["outputs/g4_output.root"]
+source.maxEvents:       500
+outputs.out1.fileName:  "outputs/detsim_output.root"
+physics.simulate:       [rns, tpcrawdecoder, opdigi, crt]
