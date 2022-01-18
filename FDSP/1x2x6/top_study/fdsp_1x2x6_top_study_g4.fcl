@@ -1,0 +1,7 @@
+#include "../fdsp_1x2x6_g4.fcl"
+
+source.fileNames:       ["outputs/generator_output.root"]
+source.maxEvents:       5
+outputs.out1.fileName:  "outputs/g4_output.root"
+# need PDFastSim for the detector simulation part
+physics.simulate:       [rns, largeant, IonAndScint, elecDrift, PDFastSim]

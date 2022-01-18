@@ -29,15 +29,15 @@ if __name__ == "__main__":
     energy      = .942065
     # (same as the settings for protoDUNE)
     momentum_magnitude = 0.0685863
-    x_pos = x_center       
-    y_pos = y_center
-    z_pos = z_center     
+    x_pos = x_cryo       
+    y_pos = y_cryo
+    z_pos = z_cryo     
     # number of events to generate
-    num_events = 500
+    num_events = 50
     # number of neutrons to generate per event
-    num_neutrons = 1
+    num_neutrons = 1450
     # output file name
-    output_file = "../dat/FDSP/FDSP_1x2x6_"+str(num_events)+"_"+str(num_neutrons)+".dat"
+    output_file = "../input_files/FDSP/1x2x6/top_study/top_"+str(num_events)+"_"+str(num_neutrons)+".dat"
 
     PNS_generator.generate_ddg_neutrons(
         num_events, 
