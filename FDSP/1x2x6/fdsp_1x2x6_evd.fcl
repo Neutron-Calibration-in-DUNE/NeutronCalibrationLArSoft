@@ -1,3 +1,4 @@
 #include "evd_dune.fcl"
 
 services.Geometry:   @local::dune10kt_1x2x6_v4_refactored_geo
+services.SimulationDrawingOptions.SimChannelLabel: "elecDrift"
