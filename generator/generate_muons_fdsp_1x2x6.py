@@ -4,7 +4,7 @@ Script for generating single muons in the FDSP 1x2x6 geometry
 from particle_generator import generate_particle
 
 num_events  = 10
-init_pos    = [0., 0., 0.]
+init_pos    = [100., 100., 0.]
 init_mom    = [0., 0., 1.]
 energy      = 6.
 
