@@ -2,4 +2,5 @@ dat/
 *.root
 *.csv
 *.npz
-
+*.dat
+*.pyc
