@@ -1,0 +1,6 @@
+#include "../fdsp_1x2x6_generator.fcl"
+
+physics.producers.generator.InputFileName:  "../../../input_files/FDSP/1x2x6/muons/fdsp_1x2x6_single_muons.dat"
+outputs.out1.fileName:  "outputs/generator_output.root"
+source.maxEvents:       10
+physics.simulate:       [rns, generator]

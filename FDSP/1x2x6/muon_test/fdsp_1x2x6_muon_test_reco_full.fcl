@@ -1,0 +1,6 @@
+#include "../fdsp_1x2x6_reco_full.fcl"
+
+source.fileNames:       ["outputs/detsim_output.root"]
+source.maxEvents:       10
+outputs.out1.fileName:  "outputs/reco_full_output.root"
+physics.reco:           [rns, wclsmcnfsp, gaushit, spsolve]
