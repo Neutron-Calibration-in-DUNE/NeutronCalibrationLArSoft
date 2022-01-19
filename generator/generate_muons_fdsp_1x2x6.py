@@ -15,5 +15,5 @@ generate_particle(
     init_pos=init_pos,
     init_mom=init_mom,
     energy=energy,
-    output_file='fdsp_1x2x6_single_muons.dat'
+    output_file='../input_files/FDSP/1x2x6/muons/fdsp_1x2x6_single_muons.dat'
 )
