@@ -6,7 +6,7 @@
 # Runs the full suite of dune FD reconstruction algorithms, including the photon detection system (provided by Alex Himmel's fcl)
 
 #include "services_dune.fcl"
-#include "../top_study/workflow_reco_dune10kt_1x2x6.fcl"
+#include "workflow_reco_dune10kt.fcl"
 #include "tools_dune.fcl"
 
 process_name: FDSPNeutronRecoFull
@@ -41,14 +41,14 @@ physics:
 
 	producers:
 	{
-		@table::dunefd_1x2x6_producers
+		@table::dunefd_horizdrift_producers
 	}
 	#define the output stream, there could be more than one if using filters
 	stream1:  [ out1 ]
 
 	#trigger_paths is a keyword and contains the paths that modify the art::event,
 	#ie filters and producers
-	reco: [ @sequence::dunefd_1x2x6_lowlevelreco ]
+	reco: [ @sequence::dunefd_horizdrift_workflow_reco ]
 	trigger_paths: [ reco ]
 
 	#end_paths is a keyword and contains the paths that do not modify the art::Event,
