@@ -6,7 +6,7 @@
 # Runs the full suite of dune FD reconstruction algorithms, including the photon detection system (provided by Alex Himmel's fcl)
 
 #include "services_dune.fcl"
-#include "workflow_reco_dune10kt_1x2x6.fcl"
+#include "../top_study/workflow_reco_dune10kt_1x2x6.fcl"
 #include "tools_dune.fcl"
 
 process_name: FDSPNeutronRecoFull
