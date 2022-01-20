@@ -42,6 +42,7 @@ physics:
 	producers:
 	{
 		@table::dunefd_horizdrift_producers
+     	wclsmcnfsp: @local::dune10kt_1x2x6_mc_nfsp
 	}
 	#define the output stream, there could be more than one if using filters
 	stream1:  [ out1 ]
