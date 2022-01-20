@@ -1,0 +1,6 @@
+#include "../fdsp_1x2x6_generator.fcl"
+
+physics.producers.generator.InputFileName:  "../../../input_files/FDSP/1x2x6/top_study/top_50_1450.dat"
+outputs.out1.fileName:  "outputs/generator_output_ar39.root"
+source.maxEvents:       50
+physics.simulate:       [rns, Ar39, generator]
