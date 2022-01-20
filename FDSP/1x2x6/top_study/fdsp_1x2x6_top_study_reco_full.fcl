@@ -1,6 +1,9 @@
 #include "../fdsp_1x2x6_reco_full.fcl"
 
 source.fileNames:       ["outputs/detsim_output.root"]
-source.maxEvents:       5
+source.maxEvents:       50
 outputs.out1.fileName:  "outputs/reco_full_output.root"
 physics.reco:           [rns, wclsmcnfsp, gaushit, spsolve]
+physics.reco.gaushit.HitFinderToolVec.CandidateHitsPlane0.RoiThreshold: 3.0
+physics.reco.gaushit.HitFinderToolVec.CandidateHitsPlane1.RoiThreshold: 3.0
+physics.reco.gaushit.HitFinderToolVec.CandidateHitsPlane2.RoiThreshold: 3.0
