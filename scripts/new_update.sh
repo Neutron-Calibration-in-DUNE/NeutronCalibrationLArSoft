@@ -15,7 +15,6 @@ ARTG4TK_VERSION=v10_03_00
 QUALS=e20:prof
 
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
-setup ninja
 cd $INSTALL_DIRECTORY
 source localProducts*/setup
 mrbslp
@@ -23,7 +22,14 @@ mrbslp
 cd $MRB_SOURCE/duneana/duneana/NeutronExtractor
 git pull
 
-ninja -C $MRB_BUILDDIR -j 32 install
+cd $MRB_BUILDDIR
+mrbsetenv
+
+# build the software stack.  Use -j<n> where n is the number of cores on the machine.
+# using <n> too large (such as 16 on a dunegpvm machine), will run the computer out of memory
+# the dune build nodes have 16 cores and enough memory to run the build with -j16
+
+mrb i -j16
 
 GEOMETRY_PATH=$NEUTRON_CALIBRATION_DIR/geometry/
 ARGON_SPHERE_PATH=$NEUTRON_CALIBRATION_DIR/ArgonSphere/
