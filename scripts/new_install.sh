@@ -10,7 +10,7 @@ done
 NEUTRON_CALIBRATION_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/../"
 
 COMPILER=e20
-DIRECTORY=/dune/app/users/$USER/NeutronCalibrationInstall
+DIRECTORY=NeutronCalibrationInstall
 USERNAME=`whoami`
 HDIR=/dune/app/users
 #HDIR=/build
@@ -44,7 +44,7 @@ mrb g dunesw
 #mrb uc
 
 cd $MRB_SOURCE/duneana/duneana/
-git clone https://github.com/infophysics/NeutronExtractor
+git clone https://github.com/Neutron-Calibration-in-DUNE/NeutronExtractor
 #sed -i '$ a add_subdirectory(NeutronExtractor)' CMakeLists.txt
 
 mrb uc
