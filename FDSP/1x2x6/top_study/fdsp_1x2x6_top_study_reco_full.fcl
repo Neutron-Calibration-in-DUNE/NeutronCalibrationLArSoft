@@ -2,7 +2,7 @@
 #include "../fdsp_1x2x6_reco_full.fcl"
 
 source.fileNames:       ["outputs/detsim_output.root"]
-source.maxEvents:       50
+source.maxEvents:       5
 outputs.out1.fileName:  "outputs/reco_full_output.root"
 
 # RECO parameters
@@ -16,7 +16,8 @@ dunefd_horizdrift_producers.gaushit.CalDataModuleLabel: "wclsmcnfsp:gauss"
 # spacepoint solver parameters
 dunefd_horizdrift_producers.spsolve.HitLabel:               "gaushit"   # name of the gaushit module
 dunefd_horizdrift_producers.spsolve.Fit:                    true    # default = true
-dunefd_horizdrift_producers.spsolve.WireIntersectThreshold: 0.7     # default = 0.7
+dunefd_horizdrift_producers.spsolve.WireIntersectThreshold: 0.4     # default = 0.7
+dunefd_horizdrift_producers.spsolve.WireIntersectThresholdDriftDir: 0.4  
 dunefd_horizdrift_producers.spsolve.Alpha:                  0.05    # default = 0.05
 # form triplets out of two hits and ONE BAD INDUCTION wire
 dunefd_horizdrift_producers.spsolve.AllowBadInductionHit:   true    # default = true
