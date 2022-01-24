@@ -1,15 +1,33 @@
+#include "spacepointsolverhitreadingtools.fcl"
 #include "../fdsp_1x2x6_reco_full.fcl"
 
 source.fileNames:       ["outputs/detsim_output.root"]
 source.maxEvents:       50
 outputs.out1.fileName:  "outputs/reco_full_output.root"
 
-dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane0.RoiThreshold: 3.0
-dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane1.RoiThreshold: 3.0
-dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane2.RoiThreshold: 3.0
+# RECO parameters
+# gaushit parameters
+dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane0.RoiThreshold: 2.0
+dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane1.RoiThreshold: 2.0
+dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane2.RoiThreshold: 2.0
 ### Here, we overwrite ALL module labels with the ones defined above.
-physics.producers.caldata.DigitLabel: "tpcrawdecoder:daq"
-
 dunefd_horizdrift_producers.gaushit.CalDataModuleLabel: "wclsmcnfsp:gauss"
+
+# spacepoint solver parameters
+dunefd_horizdrift_producers.spsolve.HitLabel:               "gaushit"   # name of the gaushit module
+dunefd_horizdrift_producers.spsolve.Fit:                    true    # default = true
+dunefd_horizdrift_producers.spsolve.WireIntersectThreshold: 0.7     # default = 0.7
+dunefd_horizdrift_producers.spsolve.Alpha:                  0.05    # default = 0.05
+# form triplets out of two hits and ONE BAD INDUCTION wire
+dunefd_horizdrift_producers.spsolve.AllowBadInductionHit:   true    # default = true
+# form triplets out of two inductions hits and a BAD COLLECTION wire
+dunefd_horizdrift_producers.spsolve.AllowBadCollectionHit:  true    # default = true
+dunefd_horizdrift_producers.spsolve.MaxIterationNoReg:      100     # default = 100
+dunefd_horizdrift_producers.spsolve.MaxIterationsReg:       100     # default = 100
+dunefd_horizdrift_producers.spsolve.XHitOffset:             0       # default = 0
+dunefd_horizdrift_producers.spsolve.HitReaderTool:          @local::standard_Hits
+
+
+physics.producers.caldata.DigitLabel: "tpcrawdecoder:daq"
 
 physics.reco:           [rns, wclsmcnfsp, gaushit, spsolve]
