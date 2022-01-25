@@ -6,6 +6,8 @@ source.maxEvents:       1
 outputs.out1.fileName:  "outputs/reco_full_output.root"
 
 # RECO parameters
+#DataPrep
+tools.adcThresholdSignalFinder.Threshold: 3
 # gaushit parameters
 dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane0.RoiThreshold: 1.0
 dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane1.RoiThreshold: 1.0
