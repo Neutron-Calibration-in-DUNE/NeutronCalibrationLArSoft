@@ -9,9 +9,9 @@ outputs.out1.fileName:  "outputs/reco_full_output.root"
 #DataPrep
 tools.adcThresholdSignalFinder.Threshold: 3
 # gaushit parameters
-dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane0.RoiThreshold: 1.0
-dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane1.RoiThreshold: 1.0
-dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane2.RoiThreshold: 1.0
+dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane0.RoiThreshold: 2.0
+dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane1.RoiThreshold: 2.0
+dunefd_horizdrift_producers.gaushit.HitFinderToolVec.CandidateHitsPlane2.RoiThreshold: 2.0
 ### Here, we overwrite ALL module labels with the ones defined above.
 dunefd_horizdrift_producers.gaushit.CalDataModuleLabel: "wclsmcnfsp:gauss"
 
