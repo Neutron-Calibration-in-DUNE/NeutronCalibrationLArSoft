@@ -2,7 +2,7 @@
 #include "../fdsp_1x2x6_reco_full.fcl"
 
 source.fileNames:       ["outputs/detsim_output.root"]
-source.maxEvents:       5
+source.maxEvents:       1
 outputs.out1.fileName:  "outputs/reco_full_output.root"
 
 # RECO parameters
