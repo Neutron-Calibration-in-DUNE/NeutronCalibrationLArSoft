@@ -1,6 +1,6 @@
 #include "../protodune_g4.fcl"
 
-source.fileNames:       ["outputs/generator_output_1.root"]
+source.fileNames:       ["outputs/generator_output_0.root"]
 source.maxEvents:       50
-outputs.out1.fileName:  "outputs/g4_output_1.root"
+outputs.out1.fileName:  "outputs/g4_output_0.root"
 physics.simulate:       [rns, largeant, IonAndScint, PDFastSim]
