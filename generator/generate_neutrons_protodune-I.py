@@ -33,7 +33,8 @@ if __name__ == "__main__":
     # number of neutrons to generate per event
     num_neutrons = 1450
     # output file name
-    output_file = "../dat/ProtoDUNE-I/ProtoDUNE-I_"+str(num_events)+"_"+str(num_neutrons)+".dat"
+    file_number = 1
+    output_file = "../dat/ProtoDUNE-I/ProtoDUNE-I_"+str(num_events)+"_"+str(num_neutrons)+"_" + str(file_number) + ".dat"
 
     PNS_generator.generate_ddg_neutrons(
         num_events, 
