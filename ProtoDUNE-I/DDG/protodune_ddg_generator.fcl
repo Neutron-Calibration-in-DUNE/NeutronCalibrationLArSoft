@@ -1,7 +1,9 @@
 #include "../protodune_generator.fcl"
+#include "protodune_ddg_geometry.fcl"
 
 # change to the input file you want to use
-physics.producers.generator.InputFileName:  "../../dat/ProtoDUNE-I/ProtoDUNE-I_50_1450.dat"  
-outputs.out1.fileName:  "outputs/generator_output.root"
+services.Geometry:      protodunev7_ddg_geo
+physics.producers.generator.InputFileName:  "../../dat/ProtoDUNE-I/ProtoDUNE-I_50_1450_0.dat"  
+outputs.out1.fileName:  "outputs/generator_output_0.root"
 source.maxEvents:       50
-physics.simulate:       [rns, generator]
+physics.simulate:       [rns, generator, Ar39, cosmic]
