@@ -1,5 +1,5 @@
-#include "../protodune_generator.fcl"
 #include "protodune_ddg_geometry.fcl"
+#include "../protodune_generator.fcl"
 
 # change to the input file you want to use
 services.Geometry:      protodunev7_ddg_geo
