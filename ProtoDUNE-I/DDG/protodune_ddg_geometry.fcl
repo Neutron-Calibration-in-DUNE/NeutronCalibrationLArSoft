@@ -5,5 +5,5 @@
 #protodunev7_ddg_geo.GDML:   "protodunev7_ddg.gdml"
 #protodunev7_ddg_geo.ROOT:   "protodunev7_ddg.gdml"
 
-services.GDML:   "protodunev7_ddg.gdml"
-services.ROOT:   "protodunev7_ddg.gdml"
+services.GDML:   "../../geometry/protodunev7_ddg.gdml"
+services.ROOT:   "../../geometry/protodunev7_ddg.gdml"
