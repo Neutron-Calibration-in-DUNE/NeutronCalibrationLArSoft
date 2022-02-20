@@ -1,6 +1,6 @@
-#include "geometry_dune.fcl"
-
 BEGIN_PROLOG
+
+#include "geometry_dune.fcl"
 
 protodunev7_ddg_geo:        @local::protodunev7_geo
 protodunev7_ddg_geo.Name:   "protodunev7_ddg_geo"
