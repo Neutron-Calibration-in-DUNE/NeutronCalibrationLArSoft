@@ -21289,7 +21289,7 @@
 
     <cutTube name="BeamPlugMod" rmin="0" rmax="12.0" z="45.398729309652" startphi="0" deltaphi="360" lowX="-0.278696241193" lowY="0" lowZ="-0.960379302747" highX="0.278696241193" highY="0" highZ="0.960379302747" aunit="deg" lunit="cm"/>
   
-    <cutTube name="Beam_0" rmin="0" rmax="10.48" z="45.398729309652" startphi="0" deltaphi="360" lowX="-0.278696241193" lowY="0" lowZ="-0.960379302747" highX="0.278696241193" highY="0" highZ="0.960379302747" aunit="deg" lunit="cm"/>
+    <cutTube name="BeamPlug_0" rmin="0" rmax="10.48" z="45.398729309652" startphi="0" deltaphi="360" lowX="-0.278696241193" lowY="0" lowZ="-0.960379302747" highX="0.278696241193" highY="0" highZ="0.960379302747" aunit="deg" lunit="cm"/>
 
     <cutTube name="BeamPlugNi_0" rmin="0" rmax="9.72" z="44.7843887066086" startphi="0" deltaphi="360" lowX="-0.278696241193" lowY="0" lowZ="-0.960379302747" highX="0.278696241193" highY="0" highZ="0.960379302747" aunit="deg" lunit="cm"/>
 
@@ -21334,7 +21334,7 @@
     </subtraction>
     <subtraction name="BeamPlug_2">
       <first ref="BeamPlug_1"/>
-      <second ref="ERing"/>
+      <second ref="BeamPlugERing"/>
       <position name="posBeamPlugSubtr_2" x="0" y="0" z="-11.499364654826" unit="cm"/>
     </subtraction>
     <subtraction name="BeamPlugNi_2">
