@@ -19,7 +19,7 @@ cd $INSTALL_DIRECTORY
 source localProducts*/setup
 mrbslp
 
-cd $MRB_SOURCE/duneana/duneana/NeutronExtractor
+cd $MRB_SOURCE/duneana/duneana/ParticleExtractor
 git pull
 
 cd $MRB_BUILDDIR

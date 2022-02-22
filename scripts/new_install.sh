@@ -44,8 +44,8 @@ mrb g dunesw
 #mrb uc
 
 cd $MRB_SOURCE/duneana/duneana/
-git clone https://github.com/Neutron-Calibration-in-DUNE/NeutronExtractor
-sed -i '$ a add_subdirectory(NeutronExtractor)' CMakeLists.txt
+git clone https://github.com/UC-Davis-Machine-Learning/ParticleExtractor
+sed -i '$ a add_subdirectory(ParticleExtractor)' CMakeLists.txt
 
 mrb uc
 cd $MRB_BUILDDIR
