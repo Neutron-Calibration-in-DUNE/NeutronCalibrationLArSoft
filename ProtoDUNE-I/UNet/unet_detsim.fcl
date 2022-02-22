@@ -3,4 +3,5 @@
 source.fileNames:       ["outputs/g4_output_0.root"]
 source.maxEvents:       50
 outputs.out1.fileName:  "outputs/detsim_output_0.root"
-physics.simulate:       [rns, tpcrawdecoder, opdigi, crt]
+#physics.simulate:       [rns, tpcrawdecoder, opdigi, crt]
+physics.simulate:       [rns, tpcrawdecoder]
