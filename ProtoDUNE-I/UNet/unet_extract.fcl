@@ -15,7 +15,7 @@ source:
 }
 services:
 {
-    TFileService:   { fileName: "outputs/extract_output_0.root" }
+    TFileService:   { fileName: "/pnfs/dune/scratch/users/ncarrara/protodune_cosmic/mc_muon_electrons/extract_output_0.root" }
     TimeTracker:    {}
     RandomNumberGenerator:  {}
     MemoryTracker:          {}
@@ -35,7 +35,7 @@ physics:
     end_paths: [ analysis ]
 }
 
-source.fileNames:                       ["outputs/g4_output_0.root"]
+source.fileNames:                       ["/pnfs/dune/scratch/users/ncarrara/protodune_cosmic/mc_muon_electrons/g4_output_0.root"]
 source.maxEvents:                       50
 
 physics.analyzers.ana.FillMCNeutronCaptures:  true
