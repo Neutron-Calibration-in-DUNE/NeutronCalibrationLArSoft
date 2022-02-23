@@ -1,7 +1,7 @@
 #include "../protodune_generator.fcl"
 
 # change to the input file you want to use
-physics.producers.generator.InputFileName:  "../../dat/ProtoDUNE-I/ProtoDUNE-I_50_1450_0.dat"  
-outputs.out1.fileName:  "outputs/generator_output_0.root"
+physics.producers.generator.InputFileName:  "../../dat/ProtoDUNE-I/ProtoDUNE-I_50_1450_REPLACE.dat"  
+outputs.out1.fileName:  "outputs/generator_output_REPLACE.root"
 source.maxEvents:       50
 physics.simulate:       [rns, generator, Ar39, cosmic]
