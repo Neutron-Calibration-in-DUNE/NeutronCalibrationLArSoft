@@ -14,4 +14,4 @@ DUNETPC_VERSION=$LARSOFT_VERSION
 ARTG4TK_VERSION=v10_03_00
 QUALS=e20:prof
 
-sed -e "s@/dune/app/users/$USER/@${INPUT_TAR_DIR_LOCAL}@" < $INSTALL_DIRECTORY/local*/setup > $NEUTRON_CALIBRATION_DIR/scripts/setup-grid.sh
+cp $INSTALL_DIRECTORY/local*/setup $NEUTRON_CALIBRATION_DIR/scripts/setup-grid.sh
