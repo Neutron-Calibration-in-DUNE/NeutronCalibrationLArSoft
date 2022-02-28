@@ -15,4 +15,5 @@ ARTG4TK_VERSION=v10_03_00
 QUALS=e20:prof
 
 #cp $INSTALL_DIRECTORY/local*/setup $NEUTRON_CALIBRATION_DIR/scripts/setup-grid.sh
-sed -e "s@/dune/app/users/$USER/@\$\{INPUT_TAR_DIR_LOCAL\}@" < $INSTALL_DIRECTORY/local*/setup > $NEUTRON_CALIBRATION_DIR/scripts/setup-grid.sh
+sed -e "s@/dune/app/users/$USER/@\$\{INPUT_TAR_DIR_LOCAL\}/@" < $INSTALL_DIRECTORY/local*/setup > $NEUTRON_CALIBRATION_DIR/scripts/setup-grid.sh
+tar --exclude '.git' -czf neutron_calibration.tar.gz $MRB_INSTALL $MRB_TOP/work $NEUTRON_CALIBRATION_DIR/scripts/run_grid_job.sh
