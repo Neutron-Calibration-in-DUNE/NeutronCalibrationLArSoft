@@ -1,4 +1,4 @@
-#include "../protodune_reco.fcl"
+#include "protodune_reco.fcl"
 
 source.fileNames:       ["$NEUTRON_OUTPUTS/detsim_output_0.root"]
 source.maxEvents:       50

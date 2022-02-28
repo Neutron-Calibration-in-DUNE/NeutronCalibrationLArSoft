@@ -1,4 +1,4 @@
-#include "../protodune_g4.fcl"
+#include "protodune_g4.fcl"
 
 source.fileNames:       ["$NEUTRON_OUTPUTS/g4_output_0.root"]
 source.maxEvents:       50

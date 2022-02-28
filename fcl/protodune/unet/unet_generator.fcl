@@ -1,4 +1,4 @@
-#include "../protodune_generator.fcl"
+#include "protodune_generator.fcl"
 
 # change to the input file you want to use
 physics.producers.generator.InputFileName:  "$NEUTRON_CALIBRATION_INSTALL/dat/protodune/protodune_50_1450_0.dat"  
