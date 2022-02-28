@@ -9,10 +9,16 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 NEUTRON_CALIBRATION_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/../"
 
-GEOMETRY_PATH=$NEUTRON_CALIBRATION_DIR/geometry/
-ARGON_SPHERE_PATH=$NEUTRON_CALIBRATION_DIR/fcl/argon_sphere/
-FDSP_1x2x6__PATH=$NEUTRON_CALIBRATION_DIR/fcl/fd_1x2x6/
-ProtoDUNE_PATH=$NEUTRON_CALIBRATION_DIR/fcl/protodune
+export INSTALL_DIRECTORY=$NEUTRON_CALIBRATION_DIR/larsoft
+export LARSOFT_VERSION=v09_31_00
+export DUNETPC_VERSION=$LARSOFT_VERSION
+export ARTG4TK_VERSION=v10_03_00
+export QUALS=e20:prof
+
+export GEOMETRY_PATH=$NEUTRON_CALIBRATION_DIR/geometry/
+export ARGON_SPHERE_PATH=$NEUTRON_CALIBRATION_DIR/fcl/argon_sphere/
+export FDSP_1x2x6_PATH=$NEUTRON_CALIBRATION_DIR/fcl/fd_1x2x6/
+export ProtoDUNE_PATH=$NEUTRON_CALIBRATION_DIR/fcl/protodune
 mkdir -p $NEUTRON_CALIBRATION_DIR/dat/protodune
 mkdir -p $ProtoDUNE_PATH/ddg/outputs/
 
