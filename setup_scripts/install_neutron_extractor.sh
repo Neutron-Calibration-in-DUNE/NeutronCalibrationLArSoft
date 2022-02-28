@@ -8,7 +8,7 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 NEUTRON_CALIBRATION_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/../"
 
-INSTALL_DIRECTORY=/dune/app/users/$USER/NeutronCalibrationInstall
+INSTALL_DIRECTORY=$NEUTRON_CALIBRATION_DIR
 LARSOFT_VERSION=v09_31_00
 DUNETPC_VERSION=$LARSOFT_VERSION
 ARTG4TK_VERSION=v10_03_00
@@ -18,7 +18,6 @@ source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 setup larsoft $LARSOFT_VERSION -q $QUALS
 setup ninja
 
-mkdir $INSTALL_DIRECTORY
 cd $INSTALL_DIRECTORY
 
 mrb newDev
@@ -45,7 +44,7 @@ mkdir -p $ProtoDUNE_PATH/ddg/outputs/
 
 # setup geometry file path
 export FW_SEARCH_PATH="$FW_SEARCH_PATH:$GEOMETRY_PATH"
-export FHICL_FILE_PATH="$FHICL_FILE_PATH:$GEOMETRY_PATH:$ARGON_SPHERE_PATH:$FDSP_PATH:$FDSP_1x2x6_PATH:$FDVD_PATH:$ProtoDUNE_PATH"
+export FHICL_FILE_PATH="$FHICL_FILE_PATH:$GEOMETRY_PATH:$ARGON_SPHERE_PATH:$FDSP_PATH:$FDSP_1x2x6_PATH:$FDVD_PATH:$ProtoDUNE_PATH:"
 
 cp $GEOMETRY_PATH/geometry_dune.fcl $MRB_INSTALL/dunetpc/$LARSOFT_VERSION/job/
 

@@ -8,7 +8,7 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 NEUTRON_CALIBRATION_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/../"
 
-INSTALL_DIRECTORY=/dune/app/users/$USER/NeutronCalibrationInstall
+INSTALL_DIRECTORY=$NEUTRON_CALIBRATION_DIR
 LARSOFT_VERSION=v09_31_00
 DUNETPC_VERSION=$LARSOFT_VERSION
 ARTG4TK_VERSION=v10_03_00
@@ -26,6 +26,9 @@ FDSP_1x2x6__PATH=$NEUTRON_CALIBRATION_DIR/fcl/fd_1x2x6/
 ProtoDUNE_PATH=$NEUTRON_CALIBRATION_DIR/fcl/protodune
 mkdir -p $NEUTRON_CALIBRATION_DIR/dat/protodune
 mkdir -p $ProtoDUNE_PATH/ddg/outputs/
+mkdir -p $ProtoDUNE_PATH/ddg/hists/
+mkdir -p $ProtoDUNE_PATH/unet/hists/
+mkdir -p $ProtoDUNE_PATH/unet/outputs/
 
 # setup geometry file path
 export FW_SEARCH_PATH="$FW_SEARCH_PATH:$GEOMETRY_PATH"
