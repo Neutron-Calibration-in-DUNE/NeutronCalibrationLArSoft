@@ -47,5 +47,5 @@ if __name__ == "__main__":
             z_pos, 
             output_file, 
             False,
-            True)
+            False)
 

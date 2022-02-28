@@ -21,6 +21,10 @@ export FDSP_1x2x6_PATH=$NEUTRON_CALIBRATION_DIR/fcl/fd_1x2x6/
 export ProtoDUNE_PATH=$NEUTRON_CALIBRATION_DIR/fcl/protodune
 mkdir -p $NEUTRON_CALIBRATION_DIR/dat/protodune
 mkdir -p $ProtoDUNE_PATH/ddg/outputs/
+export NEUTRON_OUTPUTS=$NEUTRON_CALIBRATION_DIR/outputs
+mkdir -p $NEUTRON_OUTPUTS
+export NEUTRON_HISTS=$NEUTRON_CALIBRATION_DIR/hists
+mkdir -p $NEUTRON_HISTS
 
 # setup geometry file path
 export FW_SEARCH_PATH="$FW_SEARCH_PATH:$GEOMETRY_PATH"
