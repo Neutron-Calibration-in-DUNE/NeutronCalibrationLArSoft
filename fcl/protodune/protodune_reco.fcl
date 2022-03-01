@@ -31,7 +31,7 @@ process_name: ProtoDUNEIReco
 services:
 {
     # Load the service that manages root files for histograms.
-    TFileService:           { fileName: "hists/protodune-I_reco_hists.root" }
+    TFileService:           { fileName: "hists/protodune_reco_hists.root" }
     TimeTracker:            @local::dune_time_tracker
     MemoryTracker:          @local::dune_memory_tracker
     RandomNumberGenerator:  {} #ART native random number generator
@@ -181,7 +181,7 @@ outputs:
     out1:
     {
         module_type: RootOutput
-        fileName:    "outputs/protodune-I_reco_output.root"
+        fileName:    "outputs/protodune_reco_output.root"
         dataTier:    "full-reconstructed"
         #outputCommands: [ "keep *", "drop raw::RawDigit*_*_*_*", "drop recob::Wires_caldata_dataprep_*", "drop *_wclsdatasp_wiener_*", "drop *_reco3d_noreg_*", "drop *_reco3d_pre_*" ]
         outputCommands: [ "keep *" ]
