@@ -2,6 +2,6 @@
 
 # change to the input file you want to use
 physics.producers.generator.InputFileName:  "dat/protodune/protodune_50_1450_0.dat"  
-outputs.out1.fileName:                      "generator_output_0.root"
+outputs.out1.fileName:                      "outputs/generator_output_0.root"
 source.maxEvents:       50
 physics.simulate:       [rns, generator, Ar39, cosmic]
