@@ -36,7 +36,7 @@ if __name__ == "__main__":
     num_files = 10
     
     for ii in range(num_files):
-        output_file = "dat/protodune/protodune_"+str(num_events)+"_"+str(num_neutrons)+"_" + str(ii) + ".dat"
+        output_file = "/pnfs/dune/scratch/users/ncarrara/dat/protodune/protodune_"+str(num_events)+"_"+str(num_neutrons)+"_" + str(ii) + ".dat"
         PNS_generator.generate_ddg_neutrons(
             num_events, 
             num_neutrons, 
