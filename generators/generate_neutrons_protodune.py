@@ -29,7 +29,7 @@ if __name__ == "__main__":
     y_pos = y_ddg
     z_pos = z_ddg     
     # number of events to generate
-    num_events = 1
+    num_events = 50
     # number of neutrons to generate per event
     num_neutrons = 1450
     # output file name
