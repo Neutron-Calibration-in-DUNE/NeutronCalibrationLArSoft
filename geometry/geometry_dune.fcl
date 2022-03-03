@@ -339,7 +339,8 @@ dune_geometry_helper:
 
 # DDG geometry for protodune-I
 protodunev7_ddg_geo:        @local::protodunev7_geo
-protodunev7_ddg_geo.Name:   "protodune_v7_ddg_geo"
+#protodunev7_ddg_geo.Name:   "protodune_v7_ddg_geo"
+protodunev7_ddg_geo.Name:	"protodunev7ddg"
 protodunev7_ddg_geo.GDML:   "protodune_v7_ddg.gdml"
 protodunev7_ddg_geo.ROOT:   "protodune_v7_ddg.gdml"
 
