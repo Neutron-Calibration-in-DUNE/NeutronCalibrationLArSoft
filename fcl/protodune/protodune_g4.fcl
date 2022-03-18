@@ -117,7 +117,8 @@ services.LArG4Parameters.NewProtonCut:      0.0
 # we want to keep all ionization electrons
 services.LArG4Parameters.FillSimEnergyDeposits:     true
 services.LArG4Parameters.KeepEMShowerDaughters:     true
-#services.LArG4Parameters.ParticleKineticEnergyCut:  1e-9 # GeV
+# let's try setting this to zero to see what happens.
+services.LArG4Parameters.ParticleKineticEnergyCut:  0.0 # GeV
 services.LArG4Parameters.StoreTrajectories:         true
 services.LArG4Parameters.VisualizeNeutrals:         true
 #services.LArG4Parameters.VisualizationEnergyCut:    1e-9 # GeV

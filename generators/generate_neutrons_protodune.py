@@ -29,11 +29,11 @@ if __name__ == "__main__":
     y_pos = y_ddg
     z_pos = z_ddg     
     # number of events to generate
-    num_events = 50
+    num_events = 25
     # number of neutrons to generate per event
     num_neutrons = 1450
     # output file name
-    num_files = 10
+    num_files = 1
     
     for ii in range(num_files):
         output_file = "../dat/protodune/protodune_"+str(num_events)+"_"+str(num_neutrons)+"_" + str(ii) + ".dat"

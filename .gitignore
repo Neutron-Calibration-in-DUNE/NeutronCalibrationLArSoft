@@ -1,4 +1,6 @@
 dat/
+local*/
+srcs/
 *.root
 *.csv
 *.npz
