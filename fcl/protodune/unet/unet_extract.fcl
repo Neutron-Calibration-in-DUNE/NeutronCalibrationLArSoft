@@ -11,7 +11,7 @@ physics.analyzers.ana.FillMCNeutronCaptures:  false
 FillMCEnergyDeposits:   true
 physics.analyzers.ana.MCEdepBoundingBox:      "TPC"
 physics.analyzers.ana.MCEdepPDGCodes:         [2212, 2112, 13, -13, 11, -11]
-physics.analyzers.ana.MCEdepPDGLevels:        ["electrons", "parent_electrons", "parent_electrons", "parent_electrons", "parent_electrons"]
+physics.analyzers.ana.MCEdepPDGLevels:        ["electrons", "parent_electrons", "parent_electrons", "parent_electrons", "parent_electrons", "parent_electrons"]
 physics.analyzers.ana.MCEdepEnergyCutoff:     0.0
 
 # MC Voxelizer parameters
