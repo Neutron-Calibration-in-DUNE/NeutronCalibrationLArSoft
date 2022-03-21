@@ -1,8 +1,8 @@
 #include "protodune_extract.fcl"
 
-source.fileNames:       ["/pnfs/dune/scratch/users/jyghuang/output/acn1_reco.root"]
+source.fileNames:       ["outputs/reco_output_0.root"]
 source.maxEvents:       1
-outputs.out1.fileName:  "outputs/test.root"
+outputs.out1.fileName:  "outputs/extract_output_0.root"
 
 # MC Neutron capture parameters
 physics.analyzers.ana.FillMCNeutronCaptures:  false
