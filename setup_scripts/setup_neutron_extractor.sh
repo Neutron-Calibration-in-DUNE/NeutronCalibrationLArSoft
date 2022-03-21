@@ -25,13 +25,13 @@ export ARGON_SPHERE_PATH=$NEUTRON_CALIBRATION_DIR/fcl/argon_sphere/
 export FDSP_1x2x6_PATH=$NEUTRON_CALIBRATION_DIR/fcl/fd_1x2x6/
 export PROTODUNE_PATH=$NEUTRON_CALIBRATION_DIR/fcl/protodune
 export PROTODUNE_UNET_PATH=$NEUTRON_CALIBRATION_DIR/fcl/protodune/unet
-export DATA_PATH=/pnfs/dune/scratch/users/$USER/
-mkdir -p $DATA_PATH/dat/protodune
+#export DATA_PATH=/pnfs/dune/scratch/users/$USER/
+#mkdir -p $DATA_PATH/dat/protodune
 #mkdir -p $PROTODUNE_PATH/ddg/outputs/
-export NEUTRON_OUTPUTS=$DATA_PATH/outputs
-mkdir -p $NEUTRON_OUTPUTS
-export NEUTRON_HISTS=$DATA_PATH/hists
-mkdir -p $NEUTRON_HISTS
+#export NEUTRON_OUTPUTS=$DATA_PATH/outputs
+#mkdir -p $NEUTRON_OUTPUTS
+#export NEUTRON_HISTS=$DATA_PATH/hists
+#mkdir -p $NEUTRON_HISTS
 
 # setup geometry file path
 export FW_SEARCH_PATH="$FW_SEARCH_PATH:$GEOMETRY_PATH"
