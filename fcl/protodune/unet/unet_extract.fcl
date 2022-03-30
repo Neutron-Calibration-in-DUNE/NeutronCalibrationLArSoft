@@ -1,6 +1,6 @@
 #include "protodune_extract.fcl"
 
-source.fileNames:       ["outputs/reco_output_0.root"]
+source.fileNames:       ["/pnfs/dune/scratch/users/jyghuang/output/acn1_reco.root"]
 source.maxEvents:       1
 outputs.out1.fileName:  "outputs/extract_output_0.root"
 
