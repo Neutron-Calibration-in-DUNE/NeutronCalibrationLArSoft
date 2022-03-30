@@ -8,7 +8,7 @@ outputs.out1.fileName:  "outputs/extract_output_0.root"
 physics.analyzers.ana.FillMCNeutronCaptures:  false
 
 # MC Edep parameters
-FillMCEnergyDeposits:   true
+FillMCEnergyDeposits:   false
 physics.analyzers.ana.MCEdepBoundingBox:      "TPC"
 physics.analyzers.ana.MCEdepPDGCodes:         [2212, 2112, 13, -13, 11, -11]
 physics.analyzers.ana.MCEdepPDGLevels:        ["parent_electrons", "electrons", "parent_electrons", "parent_electrons", "parent_electrons", "parent_electrons"]
@@ -17,7 +17,7 @@ physics.analyzers.ana.MCEdepEnergyCutoff:     0.0
 # MC Voxelizer parameters
 # For the voxel labeling, we can choose from either
 # "largest", or "mixed".
-physics.analyzers.ana.FillMCVoxels:           true
+physics.analyzers.ana.FillMCVoxels:           false
 physics.analyzers.ana.MCEdepPDGLabels:        [0, 1, 2, 3, 4, 5]
 physics.analyzers.ana.MCVoxelSize:            4.7
 physics.analyzers.ana.MCVoxelBoundingBox:     "TPC"
