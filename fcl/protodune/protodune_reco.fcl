@@ -18,7 +18,7 @@
 #include "cluster_dune.fcl"
 #include "t0reco.fcl"
 #include "mcreco.fcl"
-#include "mpvmpr_pdune.fcl"
+##include "mpvmpr_pdune.fcl"
 #include "detsimmodules_dune.fcl"
 #include "largeantmodules_dune.fcl"
 #include "photpropservices_dune.fcl"
