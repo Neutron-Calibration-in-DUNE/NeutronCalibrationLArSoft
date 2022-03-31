@@ -15,7 +15,13 @@
 #include "featurelabelingmodules.fcl"
 #include "particleid.fcl"
 #include "mctrutht0matching.fcl"
+#include "cluster_dune.fcl"
 #include "t0reco.fcl"
+#include "mcreco.fcl"
+#include "mpvmpr_pdune.fcl"
+#include "detsimmodules_dune.fcl"
+#include "largeantmodules_dune.fcl"
+#include "photpropservices_dune.fcl"
 #include "opticaldetectormodules_dune.fcl"
 #include "showerfindermodules_dune.fcl"
 #include "emshower3d.fcl"
@@ -86,6 +92,8 @@ physics:
         gaushit:            @local::protodunespmc_gaushitfinder
         # space point solver
         reco3d:             @local::protodunespmc_spacepointsolver
+        # tracy ushers cluster3d
+        cluster3d:          @local::standard_cluster3d
         # actual disambiguation
         hitpdune:           @local::pdune_disambigfromsp
         # event feature labeling
@@ -135,6 +143,7 @@ physics:
             gaushit,
             nhitsfilter,
             reco3d,
+            cluster3d,
             hitpdune,
             pandora,
             pandoraWriter,
@@ -237,3 +246,34 @@ physics.producers.pandora2calipid.TrackModuleLabel:          "pandora2Track"
 
 physics.producers.pandora2Shower.PFParticleLabel:            "pandora"
 physics.producers.pandora2Shower.UseAllParticles:            true
+
+# cluster3d {
+# ============================================================================== 
+physics.producers.cluster3d.Hit3DBuilderAlg:                                     @local::standard_snippethit3dbuilder
+physics.producers.cluster3d.Hit3DBuilderAlg.HitFinderTagVec:                     ["gaushit"]
+physics.producers.cluster3d.Hit3DBuilderAlg.NumSigmaPeakTime:                    3.0
+physics.producers.cluster3d.Hit3DBuilderAlg.HitWidthScaleFactor:                 3.0
+physics.producers.cluster3d.Hit3DBuilderAlg.DeltaPeakTimeSig:                    1.75
+physics.producers.cluster3d.Hit3DBuilderAlg.WirePitchScaleFactor:                3.0
+physics.producers.cluster3d.Hit3DBuilderAlg.MaxHitChiSquare:                     30.
+physics.producers.cluster3d.Hit3DBuilderAlg.InvalidTPCVec:                       [0, 3, 4, 7, 8, 11]
+# following beam side only
+#physics.producers.cluster3d.Hit3DBuilderAlg.InvalidTPCVec:                       [0,2,3,4,6,7,8,10,11]
+physics.producers.cluster3d.ClusterAlg:                                          @local::standard_cluster3ddbscanalg
+physics.producers.cluster3d.EnableMonitoring:                                    true
+physics.producers.cluster3d.ClusterAlg.MinPairPts:                               1
+physics.producers.cluster3d.ClusterAlg.kdTree.PairSigmaPeakTime:                 3.0
+physics.producers.cluster3d.ClusterAlg.kdTree.RefLeafBestDist:                   1.25 #0.75
+physics.producers.cluster3d.ClusterAlg.kdTree.MaxWireDeltas:                     4
+physics.producers.cluster3d.ClusterMergeAlg.MinEigenToProcess:                   5 #50
+physics.producers.cluster3d.ClusterMergeAlg.MinTransEigenVal:                    1. #0.5
+physics.producers.cluster3d.ClusterMergeAlg.NumTransEigenVals:                   3. #30.
+physics.producers.cluster3d.ClusterMergeAlg.OutputHistograms:                    true
+physics.producers.cluster3d.ClusterPathAlg:                                      @local::standard_convexhullPathAlg
+physics.producers.cluster3d.ClusterPathAlg.MinTinyClusterSize:                   200000 #20 #30 #40 #200000
+physics.producers.cluster3d.ClusterPathAlg.MinEigen0To1Ratio:                    12.
+physics.producers.cluster3d.ClusterPathAlg.ClusterAlg.MinPairPts:                1
+physics.producers.cluster3d.ClusterPathAlg.ClusterAlg.kdTree.PairSigmaPeakTime:  3.0
+physics.producers.cluster3d.ClusterPathAlg.ClusterAlg.kdTree.RefLeafBestDist:    0.75
+physics.producers.cluster3d.Hit3DBuilderAlg.OutputHistograms:                    false
+physics.producers.cluster3d.ClusterMergeAlg.OutputHistograms:                    false
