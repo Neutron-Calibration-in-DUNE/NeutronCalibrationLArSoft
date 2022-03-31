@@ -1,6 +1,6 @@
 #include "protodune_reco.fcl"
 
-source.fileNames:       ["/pnfs/dune/scratch/users/jyghuang/output/acn1_reco.root"]
+source.fileNames:       ["outputs/detsim_output_0.root"]
 source.maxEvents:       1
 outputs.out1.fileName:  "outputs/reco_output_0.root"
 #physics.simulate:       [rns, caldata, wclsdatasp, gaushit, nhitsfinder, reco3d, cluster3d]
