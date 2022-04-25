@@ -24,12 +24,14 @@ physics.analyzers.ana.MCVoxelBoundingBox:     "TPC"
 physics.analyzers.ana.MCVoxelLabeling:        "largest"   
 
 # Reco energy deposit parameters
-physics.analyzers.ana.FillRecoEnergyDeposits: true
+physics.analyzers.ana.FillRecoEnergyDeposits: false
 
 # MC Voxelizer parameters
 # For the voxel labeling, we can choose from either
 # "largest", or "mixed".
-physics.analyzers.ana.FillRecoVoxels:           true
+physics.analyzers.ana.FillRecoVoxels:           false
 physics.analyzers.ana.RecoEdepPDGLabels:        [0, 1, 2, 3, 4, 5]
 physics.analyzers.ana.RecoVoxelSize:            4.7
 physics.analyzers.ana.RecoVoxelLabeling:        "largest"
+
+physics.analyzers.ana.FillRecoTraining: true

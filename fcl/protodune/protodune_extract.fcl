@@ -45,16 +45,18 @@ physics:
 source.fileNames:                       ["outputs/g4_output_0.root"]
 source.maxEvents:                       50
 
-physics.analyzers.ana.FillMCNeutronCaptures:  true
+physics.analyzers.ana.FillMCNeutronCaptures:  false
 
-physics.analyzers.ana.FillMCEnergyDeposits:   true
+physics.analyzers.ana.FillMCEnergyDeposits:   false
 physics.analyzers.ana.MCEdepBoundingBox:      "TPC"
 physics.analyzers.ana.MCEdepPDGCodes:         [2112, 13]
 physics.analyzers.ana.MCEdepPDGLevels:        ["electrons", "parent_electrons"]
 physics.analyzers.ana.MCEdepEnergyCutoff:     0.0
 
-physics.analyzers.ana.FillMCVoxels:           true
+physics.analyzers.ana.FillMCVoxels:           false
 physics.analyzers.ana.MCEdepPDGLabels:        [0, 1]
 physics.analyzers.ana.MCVoxelSize:            4.7
 physics.analyzers.ana.MCVoxelBoundingBox:     "TPC"
 physics.analyzers.ana.MCVoxelLabeling:        "largest"
+
+physics.analyzers.ana.FillRecoTraining:         true
