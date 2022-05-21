@@ -4,7 +4,7 @@
 #include "CRT.fcl"
 #include "tools_dune.fcl"
 
-process_name: ProtoDUNEIDetsim
+process_name: pdunedetsim
 
 services:
 {

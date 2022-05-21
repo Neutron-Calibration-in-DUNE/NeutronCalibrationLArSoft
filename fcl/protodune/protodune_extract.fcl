@@ -6,7 +6,7 @@
 #include "singles_dune.fcl"
 #include "detsim_dune10kt_wirecell_refactored.fcl"
 
-process_name:   pdune_extract
+process_name:   pduneextract
 
 source:
 {

@@ -32,7 +32,7 @@
 #include "numberofhitsfilter.fcl"
 #include "protodune_tools_dune.fcl"
 
-process_name: pdune_reco
+process_name: pdunereco
 
 services:
 {

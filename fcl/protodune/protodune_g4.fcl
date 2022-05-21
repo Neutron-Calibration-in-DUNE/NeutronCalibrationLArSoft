@@ -4,7 +4,7 @@
 #include "IonAndScint_dune.fcl"
 #include "PDFastSim_dune.fcl"
 
-process_name: pdune_g4
+process_name: pduneg4
 
 services:
 {

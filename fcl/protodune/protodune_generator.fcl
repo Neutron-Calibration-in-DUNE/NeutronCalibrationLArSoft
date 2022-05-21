@@ -5,7 +5,7 @@
 #include "dune_radiological_model.fcl"
 #include "geometry_dune.fcl"
 
-process_name: pdune_generator
+process_name: pdunegenerator
 
 services:
 {

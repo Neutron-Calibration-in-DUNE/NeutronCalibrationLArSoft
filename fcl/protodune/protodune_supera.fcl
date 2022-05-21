@@ -28,7 +28,7 @@
 #include "protodune_tools_dune.fcl"
 
 
-process_name: pdune_supera
+process_name: pdunesupera
 # 
 services:
 {
