@@ -24,7 +24,7 @@ source:
 {
     module_type: EmptyEvent
     timestampPlugin: { plugin_type: "GeneratedEventTimestamp" }
-    maxEvents:   -1
+    maxEvents:   25
     firstRun:    1           # Run number to use for this file
     firstEvent:  1           # number of first event in the file
 }
