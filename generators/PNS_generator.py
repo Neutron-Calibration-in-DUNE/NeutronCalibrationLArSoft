@@ -26,9 +26,6 @@ Y_POS_PROTODUNE_DDG = 630
 # z position for protoDUNE run 1 DDG study
 Z_POS_PROTODUNE_DDG = 60
 
-
-
-
 def sample_spherical_unit(
     num_events:         int,
 ):
@@ -151,4 +148,5 @@ if __name__ == "__main__":
         z_pos, 
         output_file, 
         False,
-        True)
+        True
+    )

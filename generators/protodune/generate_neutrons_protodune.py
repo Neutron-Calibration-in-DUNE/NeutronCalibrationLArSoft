@@ -6,6 +6,7 @@
 
 
 """
+import os
 import PNS_generator
 
 # 1x2x6 coordinates
@@ -18,11 +19,14 @@ x_ddg = 355
 y_ddg = 630
 z_ddg = 60
 
+output_dir = "../../inputs/protodune/"
+if not os.path.isdir(output_dir):
+    os.makedirs(output_dir)
 
 if __name__ == "__main__":
     # DDG mono-energetic total energy
     # (same as the settings for protoDUNE)
-    energy      = .942065
+    energy = .942065
     # (same as the settings for protoDUNE)
     momentum_magnitude = 0.0685863
     x_pos = x_ddg       
@@ -36,7 +40,7 @@ if __name__ == "__main__":
     num_files = 1
     
     for ii in range(num_files):
-        output_file = "../dat/protodune/protodune_"+str(num_events)+"_"+str(num_neutrons)+"_" + str(ii) + ".dat"
+        output_file = f"{output_dir}protodune_{num_events}_{num_neutrons}_{ii}.dat"
         PNS_generator.generate_ddg_neutrons(
             num_events, 
             num_neutrons, 
@@ -47,5 +51,6 @@ if __name__ == "__main__":
             z_pos, 
             output_file, 
             False,
-            False)
+            False
+        )
 
