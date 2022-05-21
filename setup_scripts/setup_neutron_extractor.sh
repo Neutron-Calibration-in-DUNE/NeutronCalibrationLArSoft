@@ -1,42 +1,52 @@
 #! /bin/bash
-# get the directory where this script is stored
+#---------------------Directory---------------------#
+# this handy piece of code determines the relative
+# directory that this script is in.
 SOURCE="${BASH_SOURCE[0]}"
-while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+# resolve $SOURCE until the file is no longer a symlink
+while [ -h "$SOURCE" ]; do 
   DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
   SOURCE="$(readlink "$SOURCE")"
-  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+  # if $SOURCE was a relative symlink, we need to resolve it relative 
+  # to the path where the symlink file was located
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" 
 done
-NEUTRON_CALIBRATION_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/../"
+LOCAL_LARSOFT_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/../"
 
-INSTALL_DIRECTORY=$NEUTRON_CALIBRATION_DIR/larsoft
-LARSOFT_VERSION=v09_31_00
-DUNETPC_VERSION=$LARSOFT_VERSION
-ARTG4TK_VERSION=v10_03_00
+#---------------------Installation Directory--------#
+INSTALL_DIRECTORY=$LOCAL_LARSOFT_DIR/larsoft
+mkdir -p $INSTALL_DIRECTORY
+mkdir -p $LOCAL_LARSOFT_DIR/fcl/protodune/outputs
+mkdir -p $LOCAL_LARSOFT_DIR/fcl/protodune/hists
+cd $INSTALL_DIRECTORY
+
+#--------------------Versioning---------------------#
+# specify the version of the larsoft packages.
+LARSOFT_VERSION=v09_49_00
+DUNE_VERSION=v09_49_00d00
 QUALS=e20:prof
 
+#--------------------Setup LArSoft------------------#
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+setup larsoft $LARSOFT_VERSION -q $QUALS
 setup ninja
 cd $INSTALL_DIRECTORY
 source localProducts*/setup
+
+cd $MRB_SOURCE/larcv2
+source configure.sh
+
 mrbslp
 
-export GEOMETRY_PATH=$NEUTRON_CALIBRATION_DIR/geometry/
-export ARGON_SPHERE_PATH=$NEUTRON_CALIBRATION_DIR/fcl/argon_sphere/
-export FDSP_1x2x6_PATH=$NEUTRON_CALIBRATION_DIR/fcl/fd_1x2x6/
-export PROTODUNE_PATH=$NEUTRON_CALIBRATION_DIR/fcl/protodune
-export PROTODUNE_UNET_PATH=$NEUTRON_CALIBRATION_DIR/fcl/protodune/unet
-#export DATA_PATH=/pnfs/dune/scratch/users/$USER/
-#mkdir -p $DATA_PATH/dat/protodune
-#mkdir -p $PROTODUNE_PATH/ddg/outputs/
-#export NEUTRON_OUTPUTS=$DATA_PATH/outputs
-#mkdir -p $NEUTRON_OUTPUTS
-#export NEUTRON_HISTS=$DATA_PATH/hists
-#mkdir -p $NEUTRON_HISTS
+#------------------Custom search and fcl------------#
+# here we specify any custom search paths and fcl
+# file paths that we want our installation to know about.
+CUSTOM_SEARCH_PATH="$LOCAL_LARSOFT_DIR/geometry/"
+CUSTOM_FHICL_PATH="$LOCAL_LARSOFT_DIR/fcl/protodune/"
 
-# setup geometry file path
-export FW_SEARCH_PATH="$FW_SEARCH_PATH:$GEOMETRY_PATH"
-export FHICL_FILE_PATH="$FHICL_FILE_PATH:$GEOMETRY_PATH:$ARGON_SPHERE_PATH:$FDSP_PATH:$FDSP_1x2x6_PATH:$FDVD_PATH:$PROTODUNE_PATH:$PROTODUNE_UNET_PATH"
+export FW_SEARCH_PATH="$FW_SEARCH_PATH:$CUSTOM_SEARCH_PATH"
+export FHICL_FILE_PATH="$FHICL_FILE_PATH:$CUSTOM_FHICL_PATH"
 
-cp $GEOMETRY_PATH/geometry_dune.fcl $MRB_INSTALL/dunetpc/$LARSOFT_VERSION/job/
-cd $NEUTRON_CALIBRATION_DIR
+cp $LOCAL_LARSOFT_DIR/geometry/geometry_dune.fcl $MRB_INSTALL/dunecore/$DUNE_VERSION/fcl/
 
+cd $LOCAL_LARSOFT_DIR

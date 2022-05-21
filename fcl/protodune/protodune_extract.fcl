@@ -6,7 +6,7 @@
 #include "singles_dune.fcl"
 #include "detsim_dune10kt_wirecell_refactored.fcl"
 
-process_name:   ParticleExtractor
+process_name:   pdune_extract
 
 source:
 {
@@ -36,14 +36,14 @@ physics:
 {
     analyzers:
     {
-        ana: @local::ParticleExtractor
+        ana: @local::NeutronExtractor
     }
     analysis:  [ ana ]
     end_paths: [ analysis ]
 }
 
-source.fileNames:                       ["outputs/g4_output_0.root"]
-source.maxEvents:                       50
+source.fileNames:                       ["outputs/protodune_reco_output.root"]
+source.maxEvents:                       -1
 
 physics.analyzers.ana.FillMCNeutronCaptures:  false
 

@@ -32,7 +32,7 @@
 #include "numberofhitsfilter.fcl"
 #include "protodune_tools_dune.fcl"
 
-process_name: ProtoDUNEIReco
+process_name: pdune_reco
 
 services:
 {
@@ -45,15 +45,11 @@ services:
     FileCatalogMetadata:    @local::art_file_catalog_mc
                             @table::protodune_reco_services
     # ChannelStatusService: @local::pdsp_channel_status
-    Geometry:                 @local::protodunev7_ddg_geo
+    Geometry:               @local::protodunev7_ddg_geo
     IFDH: {}
 }
 
-services.Geometry.SortingParameters.ChannelsPerOpDet: 12
-services.Geometry.GDML: "protodune_v7.gdml"
-services.Geometry.ROOT: "protodune_v7.gdml"
-
-#BackTracker Module labels
+# BackTracker Module labels
 services.BackTrackerService.BackTracker.G4ModuleLabel: "largeant"
 services.BackTrackerService.BackTracker.SimChannelModuleLabel: "tpcrawdecoder:simpleSC"
 services.DetectorPropertiesService:    @local::protodunesp_detproperties
@@ -68,7 +64,7 @@ source:
     module_type: RootInput
     maxEvents: -1
     #saveMemoryObjectThreshold: 10485760
-    fileNames: ["outputs/protodune-I_detsim_output.root"]
+    fileNames: ["outputs/protodune_detsim_output.root"]
 }
 
 # Define and configure some modules to do work on each event.
@@ -90,97 +86,25 @@ physics:
         wclsdatasp:         @local::protodunespdata_wctsp
         # Hit finder
         gaushit:            @local::protodunespmc_gaushitfinder
-        # space point solver
-        reco3d:             @local::protodunespmc_spacepointsolver
         # tracy ushers cluster3d
         cluster3d:          @local::standard_cluster3d
-        # actual disambiguation
-        hitpdune:           @local::pdune_disambigfromsp
-        # event feature labeling
-        emtrkmichelid:      @local::protodune_emtrkmichelid
-        # reconstruction using disambiguated hits
-        pandora:            @local::protodune_pandora
-        pandoraWriter:      @local::dune_pandorawriter
-        pandoraTrack:       @local::dune_pandoraTrackCreation
-        pandoraShower:      @local::dune_pandoraShowerCreation
-        pandoracalo:        @local::pdune_sp_calomcnosce
-        pandoracalonosce:   @local::pdune_sp_calomcnosce
-        pandorapid:         @local::standard_chi2pid
-        pandoracali:        @local::protodunespmcnosce_calibrationdedx
-        pandoracalipid:     @local::standard_chi2pid
-        pandoraShowercalo:  @local::pdune_sp_showercalomcnosce
-        pandoraShowercalonosce:  @local::pdune_sp_showercalomcnosce
-        # photon detector reconstruction
-        ophit:              @local::protodune_ophit
-        opflash:            @local::protodune_opflash
-        opslicer:           @local::protodune_opslicer
-        crtreco:            @local::TwoCRTMatching_producer
-        crttag:             @local::SingleCRTMatching_producer
-        # Anode piercing tracks t0 reconstruction
-        anodepiercerst0:	@local::T0RecoAnodePiercers
-
-        ##Producers for forcing pandora to create track or shower objects
-        ##for each PFParticle
-        pandora2Track:         @local::dune_pandoraTrackCreation
-        pandora2calo:          @local::pdune_sp_alltrackcalomcnosce
-        pandora2calonosce:     @local::pdune_sp_alltrackcalomcnosce
-        pandora2pid:           @local::standard_chi2pid
-        pandora2cali:          @local::protodunespmcnosce_calibrationdedx
-        pandora2calipid:       @local::standard_chi2pid
-
-        pandora2Shower:        @local::dune_pandoraShowerCreation
-        pandora2Showercalo:    @local::pdune_sp_allshowercalomcnosce
-        pandora2Showercalonosce:    @local::pdune_sp_allshowercalomcnosce
-
+        # standard mcreco
+        mcreco:             @local::standard_mcreco
     }
     #define the producer and filter modules for this path, order matters,
     #filters reject all following items.  see lines starting physics.producers below
-    reco: [ ophit,
-            opflash,
-            opslicer,
-            caldata,
-            wclsdatasp,
-            gaushit,
-            nhitsfilter,
-            reco3d,
-            cluster3d,
-            hitpdune,
-            pandora,
-            pandoraWriter,
-            pandoraTrack,
-            pandoraShower,
-            pandoracalo,
-            pandoracalonosce,
-            pandorapid,
-            pandoracali,
-            pandoracalipid,
-            pandoraShowercalo,
-            pandoraShowercalonosce,
-            emtrkmichelid,
-            crttag,
-            crtreco,
-            anodepiercerst0,
-            pandora2Track,
-            pandora2calo,
-            pandora2calonosce,
-            pandora2pid,
-            pandora2cali,
-            pandora2calipid,
-            pandora2Shower,
-            pandora2Showercalo,
-            pandora2Showercalonosce
-        ]
+    reco: [ mcreco, caldata, wclsdatasp, gaushit, cluster3d ]
 
     #define the output stream, there could be more than one if using filters
     stream1:  [ out1 ]
 
     #trigger_paths is a keyword and contains the paths that modify the art::event,
     #ie filters and producers
-    trigger_paths: [reco]
+    trigger_paths: [ reco ]
 
     #end_paths is a keyword and contains the paths that do not modify the art::Event,
     #ie analyzers and output streams.  these all run simultaneously
-    end_paths:     [stream1]
+    end_paths:     [ stream1 ]
 }
 #block to define where the output goes.  if you defined a filter in the physics
 #block and put it in the trigger_paths then you need to put a SelectEvents: {SelectEvents: [XXX]}
@@ -192,60 +116,18 @@ outputs:
         module_type: RootOutput
         fileName:    "outputs/protodune_reco_output.root"
         dataTier:    "full-reconstructed"
-        #outputCommands: [ "keep *", "drop raw::RawDigit*_*_*_*", "drop recob::Wires_caldata_dataprep_*", "drop *_wclsdatasp_wiener_*", "drop *_reco3d_noreg_*", "drop *_reco3d_pre_*" ]
         outputCommands: [ "keep *" ]
-        #outputCommands: [ "keep *", "drop *_reco3d_noreg_*", "drop *_reco3d_pre_*" ]
-        compressionLevel: 1 #zlib argument (0-9)
+        compressionLevel: 1
         fastCloning: true
-        #basketSize: 8192 #[Byte] buffer size at 8k
-        #splitLevel: 0 #reduces number of buffers
-        #treeMaxVirtualSize: 1 #[Byte] limits number of buffers/branch to 1 (default is 10)
     }
 }
 
 physics.producers.caldata.DigitLabel:                       "tpcrawdecoder:daq" 
 physics.producers.caldata.WireName:                         "dataprep" 
-
 physics.producers.gaushit.CalDataModuleLabel:               "wclsdatasp:gauss"
-
-physics.producers.pandora.HitFinderModuleLabel:             "hitpdune"
-physics.producers.pandora.GeantModuleLabel:                 "tpcrawdecoder:simpleSC"
-physics.producers.pandoraWriter.GeantModuleLabel:           "tpcrawdecoder:simpleSC"
-physics.producers.pandoraWriter.HitFinderModuleLabel:       "hitpdune"
-physics.producers.pandoraWriter.GeneratorModuleLabel:       "generator"
-physics.producers.pandoraTrack.PFParticleLabel:             "pandora"
-physics.producers.pandoraShower.PFParticleLabel:            "pandora"
-
-physics.producers.pandorapid.CalorimetryModuleLabel:        "pandoracalo"
-physics.producers.pandorapid.TrackModuleLabel:              "pandoraTrack"
-
-physics.producers.pandoracalipid.CalorimetryModuleLabel:    "pandoracali"
-physics.producers.pandoracalipid.TrackModuleLabel:          "pandoraTrack"
-
-##Optical detector configuration
-physics.producers.ophit.InputModule:                        "opdigi"
-physics.producers.opflash.InputModule:                      "ophit"
-physics.producers.opslicer.OpHitModuleLabel:                "ophit"
 
 # Use channel map service for data
 services.PdspChannelMapService:                             @local::pdspchannelmap
-
-#Forcing Pandora to create either all tracks or all showers on each PFParticle object
-physics.producers.pandora2Track.PFParticleLabel:             "pandora"
-physics.producers.pandora2Track.UseAllParticles:             true
-####The above line forces pandora to fit a track to all PFParticles
-
-physics.producers.pandora2pid.CalorimetryModuleLabel:        "pandora2calo"
-physics.producers.pandora2pid.TrackModuleLabel:              "pandora2Track"
-
-physics.producers.pandora2cali.TrackModuleLabel:             "pandora2Track"
-physics.producers.pandora2cali.CalorimetryModuleLabel:       "pandora2calo"
-
-physics.producers.pandora2calipid.CalorimetryModuleLabel:    "pandora2cali"
-physics.producers.pandora2calipid.TrackModuleLabel:          "pandora2Track"
-
-physics.producers.pandora2Shower.PFParticleLabel:            "pandora"
-physics.producers.pandora2Shower.UseAllParticles:            true
 
 # cluster3d {
 # ============================================================================== 

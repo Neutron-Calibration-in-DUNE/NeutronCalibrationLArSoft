@@ -4,7 +4,7 @@
 #include "IonAndScint_dune.fcl"
 #include "PDFastSim_dune.fcl"
 
-process_name: ProtoDUNEIG4
+process_name: pdune_g4
 
 services:
 {
@@ -50,8 +50,8 @@ services:
 source:
 {
     module_type:    RootInput
-    maxEvents:      10000
-    fileNames:      [ "outputs/protodune-I_generator_output.root" ]
+    maxEvents:      -1
+    fileNames:      [ "outputs/protodune_generator_output.root" ]
 }
 
 # Define and configure some modules to do work on each event.
@@ -73,7 +73,7 @@ physics:
 
     #define the producer and filter modules for this path, order matters, 
     #filters reject all following items.  see lines starting physics.producers below
-    simulate:       [ largeant, IonAndScint, PDFastSim, rns ]
+    simulate: [ largeant, IonAndScint, PDFastSim, rns ]
 
     #define the output stream, there could be more than one if using filters 
     stream1:  [ out1 ]

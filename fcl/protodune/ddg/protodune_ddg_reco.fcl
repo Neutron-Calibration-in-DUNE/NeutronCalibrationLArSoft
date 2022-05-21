@@ -1,6 +1,0 @@
-#include "../protodune_reco.fcl"
-
-source.fileNames:       ["outputs/detsim_output.root"]
-source.maxEvents:       50
-outputs.out1.fileName:  "outputs/reco_output.root"
-physics.simulate:       [rns, caldata, wclsdatasp, gaushit, nhitsfinder, reco3d]

@@ -20,8 +20,8 @@ services:
 source:
 {
     module_type: RootInput
-    maxEvents: 10000
-    fileNames: ["outputs/protodune-I_g4_output.root"]
+    maxEvents:  -1
+    fileNames:  ["outputs/protodune_g4_output.root"]
 }
 
 physics:
@@ -39,11 +39,7 @@ physics:
     }
 
 
-    simulate: [ rns, 
-                tpcrawdecoder,  # TPC simulation
-                opdigi,         # OpDet and CRT simulation
-                crt
-            ] 
+    simulate: [ rns, tpcrawdecoder, opdigi, crt ] 
 
     stream1:  [ out1 ]
 
@@ -57,11 +53,8 @@ outputs:
         module_type:        RootOutput
         fileName:           "outputs/protodune_detsim_output.root"
         dataTier:           "detector-simulated"
-        compressionLevel:   1 #zlib argument (0-9)
-        fastCloning: true
-        #basketSize: 8192 #[Byte] buffer size at 2k
-        #splitLevel: 0 #reduces number of buffers
-        #treeMaxVirtualSize: 1 #[Byte] limits number of buffers/branch to 1 (default is 10)
+        compressionLevel:   1 
+        fastCloning:        true
         outputCommands:     [ "keep *" ]
     }
 }

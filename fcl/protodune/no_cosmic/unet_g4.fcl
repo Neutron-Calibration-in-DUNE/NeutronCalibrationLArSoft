@@ -1,6 +1,0 @@
-#include "../protodune_g4.fcl"
-
-source.fileNames:       ["$NEUTRON_OUTPUTS/generator_output_0.root"]
-source.maxEvents:       50
-outputs.out1.fileName:  "$NEUTRON_OUTPUTS/g4_output_0.root"
-physics.simulate:       [rns, largeant, IonAndScint, PDFastSim]

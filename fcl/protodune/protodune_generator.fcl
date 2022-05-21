@@ -5,7 +5,7 @@
 #include "dune_radiological_model.fcl"
 #include "geometry_dune.fcl"
 
-process_name: ProtoDUNEINeutronGenerator
+process_name: pdune_generator
 
 services:
 {
@@ -24,7 +24,7 @@ source:
 {
     module_type: EmptyEvent
     timestampPlugin: { plugin_type: "GeneratedEventTimestamp" }
-    maxEvents:   10000
+    maxEvents:   -1
     firstRun:    1           # Run number to use for this file
     firstEvent:  1           # number of first event in the file
 }
