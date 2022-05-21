@@ -7,6 +7,8 @@
 
 """
 import os
+import sys
+sys.path.append("../")
 import PNS_generator
 
 # 1x2x6 coordinates
