@@ -54,6 +54,7 @@ services:
     @table::protodune_refactored_simulation_services 
     @table::protodune_reco_services
     Geometry:                 @local::protodunev7_ddg_geo
+    IFDH: {}
 
     PhysicsList:
     {
