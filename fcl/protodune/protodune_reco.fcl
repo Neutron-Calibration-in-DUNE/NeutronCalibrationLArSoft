@@ -93,7 +93,7 @@ physics:
     }
     #define the producer and filter modules for this path, order matters,
     #filters reject all following items.  see lines starting physics.producers below
-    reco: [ trigfilter, nhitsfilter, caldata, wclsdatasp, gaushit, mcreco, cluster3d ]
+    reco: [ caldata, wclsdatasp, gaushit, nhitsfilter, mcreco, cluster3d ]
 
     #define the output stream, there could be more than one if using filters
     stream1:  [ out1 ]
