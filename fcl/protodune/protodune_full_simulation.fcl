@@ -13,7 +13,6 @@
 #include "wirecell_dune.fcl"
 #include "opticaldetectormodules_dune.fcl"
 #include "CRT.fcl"
-##include "tools_dune.fcl"
 
 #include "hitfindermodules_dune.fcl"
 #include "SpacePointSolver_dune.fcl"
@@ -37,6 +36,8 @@
 #include "T0RecoAnodePiercers.fcl"
 #include "numberofhitsfilter.fcl"
 #include "protodune_tools_dune.fcl"
+
+#include "tools_dune.fcl"
 
 process_name: pdunefullsim
 
