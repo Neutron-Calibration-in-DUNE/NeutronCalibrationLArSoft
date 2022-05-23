@@ -129,8 +129,8 @@ physics.producers.gaushit.CalDataModuleLabel:               "wclsdatasp:gauss"
 # Use channel map service for data
 services.PdspChannelMapService:                             @local::pdspchannelmap
 
-physics.producers.mcreco.SimChannelLabel: "tpcrawdecoder:simpleSC"
 physics.producers.mcreco.MCParticleLabel: "largeant"
+physics.producers.mcreco.SimChannelLabel: "IonAndScint"
 physics.producers.mcreco.UseSimEnergyDeposit: true
 physics.producers.mcreco.MCRecoPart.SavePathPDGList: 
 [
