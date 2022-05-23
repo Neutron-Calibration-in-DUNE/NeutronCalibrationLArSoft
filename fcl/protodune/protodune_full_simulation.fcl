@@ -9,12 +9,12 @@
 #include "IonAndScint_dune.fcl"
 #include "PDFastSim_dune.fcl"
 
+#include "caldata_dune.fcl"
 #include "wirecell_dune.fcl"
 #include "opticaldetectormodules_dune.fcl"
 #include "CRT.fcl"
 #include "tools_dune.fcl"
 
-#include "caldata_dune.fcl"
 #include "hitfindermodules_dune.fcl"
 #include "SpacePointSolver_dune.fcl"
 #include "cluster_dune.fcl"
