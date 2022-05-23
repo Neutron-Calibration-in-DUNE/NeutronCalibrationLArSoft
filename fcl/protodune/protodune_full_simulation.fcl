@@ -49,6 +49,7 @@ services:
     MemoryTracker:            @local::dune_memory_tracker
     RandomNumberGenerator:    {} #ART native random number generator
     FileCatalogMetadata:      @local::art_file_catalog_mc
+    message:                  @local::dune_message_services_prod
     @table::protodune_larg4_services
     @table::protodune_refactored_simulation_services 
     @table::protodune_reco_services
