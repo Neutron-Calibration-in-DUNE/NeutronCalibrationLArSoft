@@ -13,7 +13,7 @@
 #include "wirecell_dune.fcl"
 #include "opticaldetectormodules_dune.fcl"
 #include "CRT.fcl"
-#include "tools_dune.fcl"
+##include "tools_dune.fcl"
 
 #include "hitfindermodules_dune.fcl"
 #include "SpacePointSolver_dune.fcl"
