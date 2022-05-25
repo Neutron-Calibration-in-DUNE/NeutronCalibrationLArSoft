@@ -163,7 +163,7 @@ outputs:
     out1:
     {
         module_type: RootOutput
-        fileName:    "%ifb_%p.root"
+        fileName:    "only_neutrons_extract_output.root"
         dataTier:    "extract"
         compressionLevel: 1
         # skim output (if needed)
