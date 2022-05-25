@@ -93,7 +93,7 @@ source:
 {
     module_type: EmptyEvent
     timestampPlugin: { plugin_type: "GeneratedEventTimestamp" }
-    maxEvents:   1
+    maxEvents:   10
     firstRun:    1           # Run number to use for this file
     firstEvent:  1           # number of first event in the file
 }
@@ -164,7 +164,7 @@ outputs:
     out1:
     {
         module_type: RootOutput
-        fileName:    "only_neutrons_extract_output.root"
+        fileName:    "outputs/only_neutrons_extract_output.root"
         dataTier:    "extract"
         compressionLevel: 1
         # skim output (if needed)
@@ -174,7 +174,7 @@ outputs:
 
 # generator
 physics.producers.generator.InputFileName:  "../../inputs/protodune/protodune_100_1450_0.dat"
-physics.producers.generator.maxEvents:      1
+physics.producers.generator.maxEvents:      10
 
 # larg4
 physics.producers.largeant.ChargeRecoveryMargin: 2.5 # cm
