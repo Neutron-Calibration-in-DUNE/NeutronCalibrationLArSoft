@@ -4,9 +4,16 @@
 #include "corsika_protodune.fcl"
 #include "dune_radiological_model.fcl"
 #include "geometry_dune.fcl"
+
 #include "LArG4_dune.fcl"
 #include "IonAndScint_dune.fcl"
 #include "PDFastSim_dune.fcl"
+
+#include "services_refactored_pdune.fcl"
+#include "wirecell_dune.fcl"
+#include "opticaldetectormodules_dune.fcl"
+#include "CRT.fcl"
+#include "tools_dune.fcl"
 
 process_name: pdunefullsim
 
@@ -68,10 +75,13 @@ physics:
 {
     producers:
     {
-        generator:  @local::standard_textfilegen
+        generator:      @local::standard_textfilegen
         largeant:       @local::protodune_larg4
         IonAndScint:    @local::protodune_ionandscint
         PDFastSim:      @local::protodune_pdfastsim_pvs
+        tpcrawdecoder:  @local::wirecell_protodunespmc
+        opdigi:         @local::protodune_opdigi_refactor
+        crt:            @local::CRTSimRefac_standard
         rns:        { module_type: "RandomNumberSaver" }
     }
     
@@ -81,6 +91,7 @@ physics:
     [
         generator, 
         largeant, IonAndScint, PDFastSim,
+        tpcrawdecoder, opdigi, crt,
         rns
     ]
  
@@ -103,7 +114,7 @@ outputs:
     out1:
     {
         module_type:        RootOutput
-        fileName:           "outputs/only_neutrons_generator_output.root"
+        fileName:           "outputs/only_neutrons_fullsim_output.root"
         dataTier:           "generated"
         compressionLevel:   1
         outputCommands:     [ "keep *" ]
