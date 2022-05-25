@@ -68,11 +68,6 @@ source:
 # Modules are grouped by type.
 physics:
 {
-    filters: 
-    {
-        trigfilter:  @local::pdsp_trigfilter_all
-        nhitsfilter: @local::standard_numberofhitsfilter
-    }
     producers:
     {
         generator:      @local::standard_textfilegen
