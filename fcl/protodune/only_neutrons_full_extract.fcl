@@ -39,6 +39,8 @@
 
 #include "tools_dune.fcl"
 
+#include "NeutronExtractor.fcl"
+
 process_name: pdunefullsim
 
 services:
