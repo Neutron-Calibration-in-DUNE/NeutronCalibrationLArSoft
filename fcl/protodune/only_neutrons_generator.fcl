@@ -36,7 +36,10 @@ physics:
 {
     producers:
     {
-        generator:  @local::standard_textfilegen        # neutrons from the .dat file
+        generator:      @local::standard_textfilegen 
+        largeant:       @local::protodune_larg4
+        IonAndScint:    @local::protodune_ionandscint
+        PDFastSim:      @local::protodune_pdfastsim_pvs
         rns:        { module_type: "RandomNumberSaver" }
     }
 
