@@ -1,3 +1,4 @@
+#include "NeutronExtractor.fcl"
 #include "services_refactored_pdune.fcl"
 #include "singles_dune.fcl"
 #include "textfilegen.fcl"
@@ -39,7 +40,7 @@
 
 #include "tools_dune.fcl"
 
-#include "NeutronExtractor.fcl"
+
 
 process_name: pdunefullsim
 
