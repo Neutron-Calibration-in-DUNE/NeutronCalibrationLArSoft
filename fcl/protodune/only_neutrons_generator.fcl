@@ -71,5 +71,5 @@ outputs:
     }
 }
 
-physics.producers.generator.InputFileName:  "../../inputs/protodune/protodune_25_1450_0.dat"
+physics.producers.generator.InputFileName:  "../../inputs/protodune/protodune_100_1450_0.dat"
 physics.producers.generator.maxEvents:      100
