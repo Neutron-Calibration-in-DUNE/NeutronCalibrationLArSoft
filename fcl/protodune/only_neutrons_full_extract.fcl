@@ -56,7 +56,7 @@ source:
 {
     module_type: EmptyEvent
     timestampPlugin: { plugin_type: "GeneratedEventTimestamp" }
-    maxEvents:   25
+    maxEvents:   2
     firstRun:    1           # Run number to use for this file
     firstEvent:  1           # number of first event in the file
 }
@@ -111,7 +111,7 @@ outputs:
 }
 
 physics.producers.generator.InputFileName:  "../../inputs/protodune/protodune_100_1450_0.dat"
-physics.producers.generator.maxEvents:      10
+physics.producers.generator.maxEvents:      2
 
 physics.producers.largeant.ChargeRecoveryMargin: 2.5 # cm
 services.LArG4Parameters.UseCustomPhysics:      true
