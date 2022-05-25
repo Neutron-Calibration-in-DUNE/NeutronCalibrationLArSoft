@@ -127,6 +127,7 @@ physics:
         gaushit:            @local::protodunespmc_gaushitfinder
         cluster3D:          @local::standard_cluster3d
         mcreco:             @local::standard_mcreco
+        reco3d:             @local::protodunespmc_spacepointsolver
         # rns
         rns:        { module_type: "RandomNumberSaver" }
     }
@@ -141,7 +142,7 @@ physics:
         generator,
         largeant, IonAndScint, PDFastSim, 
         tpcrawdecoder, opdigi, crt,
-        caldata, wclsdatasp, gaushit, nhitsfilter, mcreco, cluster3D,
+        caldata, wclsdatasp, gaushit, nhitsfilter, mcreco, cluster3D, reco3d
         rns
     ]
     analyze:  [ ana ]

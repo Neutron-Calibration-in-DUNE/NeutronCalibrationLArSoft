@@ -90,10 +90,12 @@ physics:
         cluster3D:          @local::standard_cluster3d
         # standard mcreco
         mcreco:             @local::standard_mcreco
+        # space point solver
+        reco3d:             @local::protodunespmc_spacepointsolver
     }
     #define the producer and filter modules for this path, order matters,
     #filters reject all following items.  see lines starting physics.producers below
-    reco: [ caldata, wclsdatasp, gaushit, nhitsfilter, mcreco, cluster3D ]
+    reco: [ caldata, wclsdatasp, gaushit, nhitsfilter, mcreco, cluster3D, reco3d ]
 
     #define the output stream, there could be more than one if using filters
     stream1:  [ out1 ]
