@@ -167,7 +167,7 @@ outputs:
         dataTier:    "extract"
         compressionLevel: 1
         # skim output (if needed)
-        outputCommands: [ ]
+        outputCommands: [ "drop *" ]
     }
 }
 
@@ -189,7 +189,7 @@ services.message.destinations :
 }
 # generator
 physics.producers.generator.InputFileName:  "../../inputs/protodune/protodune_100_1450_0.dat"
-physics.producers.generator.maxEvents:      100
+physics.producers.generator.maxEvents:      1
 
 # larg4
 physics.producers.largeant.ChargeRecoveryMargin: 2.5 # cm
