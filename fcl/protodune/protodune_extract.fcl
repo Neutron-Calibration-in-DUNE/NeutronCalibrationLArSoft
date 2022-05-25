@@ -47,7 +47,7 @@ source.maxEvents:                       -1
 
 physics.analyzers.ana.LArGeantProducerLabel:    "largeant"
 physics.analyzers.ana.IonAndScintProducerLabel: "IonAndScint"
-physics.analyzers.ana.Cluster3DProducerLabel:   "cluster3D"
+physics.analyzers.ana.SpacePointProducerLabel:  "reco3d"
 physics.analyzers.ana.SimChannelProducerLabel:  "tpcrawdecoder"
 physics.analyzers.ana.SimChannelInstanceProducerLabel: "simpleSC"
 
