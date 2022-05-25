@@ -142,7 +142,7 @@ physics:
         generator,
         largeant, IonAndScint, PDFastSim, 
         tpcrawdecoder, opdigi, crt,
-        caldata, wclsdatasp, gaushit, nhitsfilter, mcreco, cluster3D, reco3d
+        caldata, wclsdatasp, gaushit, nhitsfilter, mcreco, cluster3D, reco3d,
         rns
     ]
     analyze:  [ ana ]
