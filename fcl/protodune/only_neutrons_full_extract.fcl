@@ -168,7 +168,7 @@ outputs:
         dataTier:    "extract"
         compressionLevel: 1
         # skim output (if needed)
-        outputCommands: [  ]
+        outputCommands: [ "keep *" ]
     }
 }
 
