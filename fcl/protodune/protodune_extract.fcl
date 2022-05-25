@@ -15,7 +15,7 @@ source:
 }
 services:
 {
-    TFileService:   { fileName: "outputs/protodune_extract_output.root" }
+    TFileService:   { fileName: "outputs/extract_output.root" }
     TimeTracker:    {}
     RandomNumberGenerator:  {}
     MemoryTracker:          {}
@@ -42,7 +42,7 @@ physics:
     end_paths: [ analysis ]
 }
 
-source.fileNames:                       ["outputs/protodune_reco_output.root"]
+source.fileNames:                       ["outputs/only_neutrons_extract_output.root"]
 source.maxEvents:                       -1
 
 physics.analyzers.ana.LArGeantProducerLabel:    "largeant"
