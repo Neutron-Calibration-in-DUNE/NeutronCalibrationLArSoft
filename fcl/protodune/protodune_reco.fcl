@@ -95,7 +95,7 @@ physics:
     }
     #define the producer and filter modules for this path, order matters,
     #filters reject all following items.  see lines starting physics.producers below
-    reco: [ caldata, wclsdatasp, gaushit, nhitsfilter, mcreco, cluster3D, reco3d ]
+    reco: [ caldata, wclsdatasp, gaushit, nhitsfilter, reco3d ]
 
     #define the output stream, there could be more than one if using filters
     stream1:  [ out1 ]
@@ -131,43 +131,43 @@ physics.producers.gaushit.CalDataModuleLabel:               "wclsdatasp:gauss"
 # Use channel map service for data
 services.PdspChannelMapService:                             @local::pdspchannelmap
 
-physics.producers.mcreco.MCParticleLabel: "largeant"
-physics.producers.mcreco.SimChannelLabel: "IonAndScint"
-physics.producers.mcreco.UseSimEnergyDeposit: true
-physics.producers.mcreco.MCRecoPart.SavePathPDGList: 
-[
-    13,-13,211,-211,111,311,310,
-    130,321,-321,2212,2112,2224,2214,2114,1114,3122,
-    1000010020,1000010030,1000020030,1000020040 
-]
+# physics.producers.mcreco.MCParticleLabel: "largeant"
+# physics.producers.mcreco.SimChannelLabel: "IonAndScint"
+# physics.producers.mcreco.UseSimEnergyDeposit: true
+# physics.producers.mcreco.MCRecoPart.SavePathPDGList: 
+# [
+#     13,-13,211,-211,111,311,310,
+#     130,321,-321,2212,2112,2224,2214,2114,1114,3122,
+#     1000010020,1000010030,1000020030,1000020040 
+# ]
 
-# cluster3d {
-# ============================================================================== 
-physics.producers.cluster3D.Hit3DBuilderAlg:                                     @local::standard_snippethit3dbuilder
-physics.producers.cluster3D.Hit3DBuilderAlg.HitFinderTagVec:                     ["gaushit"]
-physics.producers.cluster3D.Hit3DBuilderAlg.NumSigmaPeakTime:                    3.0
-physics.producers.cluster3D.Hit3DBuilderAlg.HitWidthScaleFactor:                 3.0
-physics.producers.cluster3D.Hit3DBuilderAlg.DeltaPeakTimeSig:                    1.75
-physics.producers.cluster3D.Hit3DBuilderAlg.WirePitchScaleFactor:                3.0
-physics.producers.cluster3D.Hit3DBuilderAlg.MaxHitChiSquare:                     30.
-physics.producers.cluster3D.Hit3DBuilderAlg.InvalidTPCVec:                       [0, 3, 4, 7, 8, 11]
-# following beam side only
-#physics.producers.cluster3D.Hit3DBuilderAlg.InvalidTPCVec:                       [0,2,3,4,6,7,8,10,11]
-physics.producers.cluster3D.ClusterAlg:                                          @local::standard_cluster3ddbscanalg
-physics.producers.cluster3D.EnableMonitoring:                                    true
-physics.producers.cluster3D.ClusterAlg.MinPairPts:                               1
-physics.producers.cluster3D.ClusterAlg.kdTree.PairSigmaPeakTime:                 3.0
-physics.producers.cluster3D.ClusterAlg.kdTree.RefLeafBestDist:                   1.25 #0.75
-physics.producers.cluster3D.ClusterAlg.kdTree.MaxWireDeltas:                     4
-physics.producers.cluster3D.ClusterMergeAlg.MinEigenToProcess:                   5 #50
-physics.producers.cluster3D.ClusterMergeAlg.MinTransEigenVal:                    1. #0.5
-physics.producers.cluster3D.ClusterMergeAlg.NumTransEigenVals:                   3. #30.
-physics.producers.cluster3D.ClusterMergeAlg.OutputHistograms:                    true
-physics.producers.cluster3D.ClusterPathAlg:                                      @local::standard_convexhullPathAlg
-physics.producers.cluster3D.ClusterPathAlg.MinTinyClusterSize:                   200000 #20 #30 #40 #200000
-physics.producers.cluster3D.ClusterPathAlg.MinEigen0To1Ratio:                    12.
-physics.producers.cluster3D.ClusterPathAlg.ClusterAlg.MinPairPts:                1
-physics.producers.cluster3D.ClusterPathAlg.ClusterAlg.kdTree.PairSigmaPeakTime:  3.0
-physics.producers.cluster3D.ClusterPathAlg.ClusterAlg.kdTree.RefLeafBestDist:    0.75
-physics.producers.cluster3D.Hit3DBuilderAlg.OutputHistograms:                    false
-physics.producers.cluster3D.ClusterMergeAlg.OutputHistograms:                    false
+# # cluster3d {
+# # ============================================================================== 
+# physics.producers.cluster3D.Hit3DBuilderAlg:                                     @local::standard_snippethit3dbuilder
+# physics.producers.cluster3D.Hit3DBuilderAlg.HitFinderTagVec:                     ["gaushit"]
+# physics.producers.cluster3D.Hit3DBuilderAlg.NumSigmaPeakTime:                    3.0
+# physics.producers.cluster3D.Hit3DBuilderAlg.HitWidthScaleFactor:                 3.0
+# physics.producers.cluster3D.Hit3DBuilderAlg.DeltaPeakTimeSig:                    1.75
+# physics.producers.cluster3D.Hit3DBuilderAlg.WirePitchScaleFactor:                3.0
+# physics.producers.cluster3D.Hit3DBuilderAlg.MaxHitChiSquare:                     30.
+# physics.producers.cluster3D.Hit3DBuilderAlg.InvalidTPCVec:                       [0, 3, 4, 7, 8, 11]
+# # following beam side only
+# #physics.producers.cluster3D.Hit3DBuilderAlg.InvalidTPCVec:                       [0,2,3,4,6,7,8,10,11]
+# physics.producers.cluster3D.ClusterAlg:                                          @local::standard_cluster3ddbscanalg
+# physics.producers.cluster3D.EnableMonitoring:                                    true
+# physics.producers.cluster3D.ClusterAlg.MinPairPts:                               1
+# physics.producers.cluster3D.ClusterAlg.kdTree.PairSigmaPeakTime:                 3.0
+# physics.producers.cluster3D.ClusterAlg.kdTree.RefLeafBestDist:                   1.25 #0.75
+# physics.producers.cluster3D.ClusterAlg.kdTree.MaxWireDeltas:                     4
+# physics.producers.cluster3D.ClusterMergeAlg.MinEigenToProcess:                   5 #50
+# physics.producers.cluster3D.ClusterMergeAlg.MinTransEigenVal:                    1. #0.5
+# physics.producers.cluster3D.ClusterMergeAlg.NumTransEigenVals:                   3. #30.
+# physics.producers.cluster3D.ClusterMergeAlg.OutputHistograms:                    true
+# physics.producers.cluster3D.ClusterPathAlg:                                      @local::standard_convexhullPathAlg
+# physics.producers.cluster3D.ClusterPathAlg.MinTinyClusterSize:                   200000 #20 #30 #40 #200000
+# physics.producers.cluster3D.ClusterPathAlg.MinEigen0To1Ratio:                    12.
+# physics.producers.cluster3D.ClusterPathAlg.ClusterAlg.MinPairPts:                1
+# physics.producers.cluster3D.ClusterPathAlg.ClusterAlg.kdTree.PairSigmaPeakTime:  3.0
+# physics.producers.cluster3D.ClusterPathAlg.ClusterAlg.kdTree.RefLeafBestDist:    0.75
+# physics.producers.cluster3D.Hit3DBuilderAlg.OutputHistograms:                    false
+# physics.producers.cluster3D.ClusterMergeAlg.OutputHistograms:                    false
