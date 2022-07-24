@@ -33,9 +33,6 @@ setup ninja
 cd $INSTALL_DIRECTORY
 source localProducts*/setup
 
-cd $MRB_SOURCE/larcv2
-source configure.sh
-
 mrbslp
 
 #------------------Custom search and fcl------------#

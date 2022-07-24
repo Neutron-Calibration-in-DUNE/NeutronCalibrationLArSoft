@@ -33,13 +33,6 @@ setup ninja
 cd $INSTALL_DIRECTORY
 source localProducts*/setup
 
-cd $MRB_SOURCE/larcv2
-source configure.sh
-
-cd $MRB_SOURCE/duneana/Supera
-git pull
-source setup.sh pdune
-
 cd $MRB_SOURCE/duneana/NeutronExtractor
 git pull
 

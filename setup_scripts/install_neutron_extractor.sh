@@ -56,20 +56,6 @@ mrb g dunesw@$DUNE_VERSION
 #------------------Custom code part-----------------#
 # here we put any special code that needs to
 # be executed for the custom package.
-# set up larcv2
-cd $MRB_SOURCE
-git clone https://github.com/Neutron-Calibration-in-DUNE/larcv2
-cd larcv2
-source configure.sh
-make
-
-# set up supera
-cd $MRB_SOURCE/duneana/
-git clone -b pdune https://github.com/Neutron-Calibration-in-DUNE/Supera
-sed -i '$ a add_subdirectory(Supera)' CMakeLists.txt
-cd Supera
-source setup.sh pdune
-
 # set up neutron extractor
 cd $MRB_SOURCE/duneana/
 git clone https://github.com/Neutron-Calibration-in-DUNE/NeutronExtractor
