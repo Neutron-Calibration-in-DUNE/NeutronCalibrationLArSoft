@@ -15,7 +15,7 @@ num_events: 10
 services:
 {
     # Load the service that manages root files for histograms.
-    TFileService:             { fileName: "hists/only_neutrons_largeant_hists.root" }
+    TFileService:             { fileName: "hists/single_neutrons_largeant_hists.root" }
     TimeTracker:              @local::dune_time_tracker
     MemoryTracker:            @local::dune_memory_tracker
     RandomNumberGenerator:    {} #ART native random number generator
@@ -106,7 +106,7 @@ outputs:
     out1:
     {
         module_type:        RootOutput
-        fileName:           "outputs/only_neutrons_largeant_output.root"
+        fileName:           "outputs/single_neutrons_largeant_output.root"
         dataTier:           "generated"
         compressionLevel:   1
         outputCommands:     [ "keep *" ]
