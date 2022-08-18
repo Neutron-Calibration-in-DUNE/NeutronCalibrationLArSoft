@@ -113,7 +113,7 @@ outputs:
     }
 }
 
-physics.producers.generator.InputFileName:  "../../../inputs/protodune/protodune_25_1450_0.dat"
+physics.producers.generator.InputFileName:  "../../../inputs/protodune/protodune_10_1_0.dat"
 physics.producers.generator.maxEvents:      @local::num_events
 
 physics.producers.largeant.ChargeRecoveryMargin: 2.5 # cm
