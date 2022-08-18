@@ -28,7 +28,7 @@ if not os.path.isdir(output_dir):
 if __name__ == "__main__":
     # DDG mono-energetic total energy
     # (same as the settings for protoDUNE)
-    energy = .94093518
+    energy = .939566
     # (same as the settings for protoDUNE)
     momentum_magnitude = 0.00137018136 # 1 keV
     x_pos = -150       
