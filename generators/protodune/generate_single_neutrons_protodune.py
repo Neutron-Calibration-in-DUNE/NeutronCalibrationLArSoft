@@ -14,8 +14,8 @@ import PNS_generator
 # 1x2x6 coordinates
 # center of the active volume
 x_center = 0
-y_center = 0
-z_center = 700
+y_center = 303.5
+z_center = 347.747
 # ddg location
 x_ddg = 355
 y_ddg = 630
